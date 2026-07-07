@@ -1,0 +1,2163 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap');
+/* ================================================================= */
+/* GLOBAL LOGIC & DESIGN SYSTEM VARIABLES                            */
+/* ================================================================= */
+:root {
+  --primary-red: #f12d0f;
+  --bg-light-gray: #fafafa;
+  --border-gray: #ececec;
+  --text-main: #333333;
+  --text-muted: #666666;
+}
+
+/* Base Wrapper Normalization */
+.jago-header-wrapper {
+  font-family: "Noto Serif Bengali", Arial, Helvetica, sans-serif !important;
+  color: var(--text-main);
+  background-color: #ffffff;
+  width: 100%;
+}
+
+/* ================================================================= */
+/* SECTION: TOP AD BANNER STYLES                                     */
+/* ================================================================= */
+.jago-top-ad-bar {
+  width: 100%;
+  background-color: var(--bg-light-gray);
+  padding: 5px 0;
+  /* Tightened top/bottom padding */
+  border-bottom: 1px solid var(--border-gray);
+  height: auto;
+  /* REMOVED 104px fixed height so it wraps perfectly around the 90px image */
+  line-height: 0;
+  /* Prevents inline text formatting gaps below the image */
+}
+
+.jago-ad-inner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jago-ad-slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.jago-ad-slot a {
+  display: block;
+  margin: 0 auto;
+}
+
+.jago-ad-slot img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 0px;
+}
+
+/* ================================================================= */
+/* SECTION: JAGO NEWS MAIN LOGO & BRANDING BAR                       */
+/* ================================================================= */
+.jago-custom-header {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 0 5px 0;
+  /* Dropped bottom padding to 5px to eliminate gap before red nav bar */
+  margin-bottom: 0 !important;
+  /* Forces no margin below the branding header row */
+}
+
+/* Flex Container handling multi-device column wrapping flows */
+.jago-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Left Column: Stacked Date System */
+.jago-date-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.jago-date-primary {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.jago-date-secondary {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Center Column: Middle Branding Logo */
+.jago-logo-block {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jago-logo-block img {
+  max-width: 350px;
+  width: 100%;
+  /* Allows image sizing fluidity */
+  height: auto;
+  display: block;
+}
+
+/* Right Column: Social Media Anchor Layout configurations */
+.jago-social-block {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.jago-social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.jago-social-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.jago-social-list a,
+.social-container a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-gray);
+  border-radius: 50%;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.jago-social-list a:hover,
+.social-container a:hover {
+  color: var(--primary-red);
+  border-color: var(--primary-red);
+  background-color: rgba(241, 45, 15, 0.03);
+}
+
+.jago-social-list svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Utility Layout Helper Rules */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+/* ================================================================= */
+/* MEDIA QUERY STACK: RESPONSIVE SCREEN BREAKPOINTS                 */
+/* ================================================================= */
+
+/* Tablet Viewport Optimization */
+@media (max-width: 991px) {
+  .jago-logo-block img {
+    max-width: 280px;
+    /* Scales logo down slightly so things fit perfectly */
+  }
+}
+
+/* Mobile Viewport Optimization (Stacks everything vertically) */
+@media (max-width: 767px) {
+
+  /* Hides ad banner container area layout on small mobile screens */
+  .jago-top-ad-bar {
+    display: none;
+  }
+
+  /* Changes row flex flow into vertical column matrices */
+  .jago-header-container {
+    flex-direction: column;
+    gap: 15px;
+    /* Adds consistent spacing between the sections */
+    text-align: center;
+  }
+
+  .jago-date-block,
+  .jago-logo-block,
+  .jago-social-block {
+    flex: none;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+/* ================================================================= */
+/* GLOBAL RESET: OVERSIZE OVERRIDES & DENSITY DEFIER                */
+/* ================================================================= */
+html {
+  font-size: 14px !important;
+  /* Forces normal site text proportions globally */
+}
+
+body {
+  font-family: "Noto Serif Bengali", Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+   padding-top:46px;
+}
+
+/* ================================================================= */
+/* STYLE STACK: JAGO NEWS MAIN RED NAVIGATION BAR                    */
+/* ================================================================= */
+.jago-main-nav {
+  width: 100%;
+  background-color: #b30f0f;
+  border: none;
+  margin-top: 0 !important;
+  box-sizing: border-box;
+
+  /* Sticky Navbar */
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.jago-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 46px;
+  position: relative;
+}
+
+/* Desktop Navigation Base */
+.jago-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.jago-nav-links>li {
+  position: relative;
+  height: 100%;
+}
+
+.jago-nav-links>li>a {
+  display: flex;
+  align-items: center;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 11px;
+  height: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.jago-nav-links>li:hover>a,
+.jago-nav-links>li.active>a {
+  background-color: #910909;
+}
+
+/* Home SVG Custom Dimensions */
+.home-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* English Edition Badge Layout */
+.eng-badge {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Right Search Vector Anchor styling */
+.jago-nav-search {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.search-trigger-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 0 15px;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.search-trigger-btn:hover {
+  background-color: #910909;
+}
+
+.search-trigger-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ================================================================= */
+/* DROPDOWN SUB-MENUS BEHAVIOR LAYER (DESKTOP)                       */
+/* ================================================================= */
+.dropdown-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  display: none;
+  z-index: 1000;
+  border-radius: 0 0 4px 4px;
+}
+
+.dropdown-submenu li a {
+  display: block !important;
+  padding: 8px 15px !important;
+  color: #333333 !important;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: left;
+}
+
+.dropdown-submenu li a:hover {
+  background-color: #f5f5f5;
+  color: #b30f0f !important;
+}
+
+.nav-dropdown:hover .dropdown-submenu {
+  display: block;
+}
+
+.dropdown-submenu-right {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* Burger Toggle Button - Hidden on Desktop */
+.jago-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.jago-menu-toggle .burger-bar {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* ================================================================= */
+/* MEDIA QUERY: TARGET MOBILE & TABLET DEVICE VIEWPORTS (< 991px)    */
+/* ================================================================= */
+@media (max-width: 991px) {
+  .jago-nav-container {
+    height: 46px;
+    /* Retain standard height container constraint */
+  }
+
+  /* Reveal the Burger Trigger Button Elements */
+  .jago-menu-toggle {
+    display: flex;
+  }
+
+  /* Structural Transformation of Horizontal Menu Into Vertical Stack */
+  .jago-nav-links {
+    display: none !important;
+    /* Forces layout hide on default mobile state */
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    height: auto !important;
+    position: absolute !important;
+    top: 46px !important;
+    /* Drop down exactly below the 46px navbar line */
+    left: 0 !important;
+    background-color: #b30f0f !important;
+    padding: 10px 0 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    z-index: 1000 !important;
+  }
+
+  /* CRITICAL MATCH: Re-aligns perfectly with your script class toggles */
+  .jago-nav-links.open-active {
+    display: flex !important;
+  }
+
+  .jago-nav-links li {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .jago-nav-links li a {
+    display: block !important;
+    padding: 12px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    font-size: 14px !important;
+    text-align: left;
+  }
+
+  /* Format Mobile Cascading Submenus */
+  .nav-dropdown {
+    position: relative !important;
+  }
+
+  .nav-dropdown:hover .dropdown-submenu {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .dropdown-submenu li a {
+    padding-left: 35px !important;
+    /* Clear nested indentation */
+    color: #ffffff !important;
+    /* Contrast correction for red mobile backgrounds */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .dropdown-submenu li a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #ffffff !important;
+  }
+
+  /* Transform burger lines into an 'X' close indicator when active */
+  .jago-menu-toggle.open .burger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .jago-menu-toggle.open .burger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .jago-menu-toggle.open .burger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+/* ================================================================= */
+/* STYLE STACK: JAGO NEWS TRENDING HIGHLIGHTS BAR                    */
+/* ================================================================= */
+.jago-trending-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 12px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Master inner container layout alignment rules */
+.tranding-tag-gray {
+  display: flex !important;
+  align-items: center;
+  font-family: "Noto Serif Bengali", Arial, Helvetica, sans-serif !important;
+  width: 100%;
+}
+
+/* Left side header tracking label ("আলোচিত:") */
+.trending-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222222;
+  margin-right: 15px;
+  white-space: nowrap;
+}
+
+/* Flex containment container managing individual buttons layout */
+.trending-tags-container {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  /* Clean, distinct uniform spacing between tags */
+  overflow-x: auto;
+  /* Enables swipe action mechanics for mobile screens */
+  white-space: nowrap;
+  width: 100%;
+  padding-bottom: 3px;
+  /* Safety margin clearance against clipping */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide structural system scrollbars visually for a premium appearance */
+.trending-tags-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tag Link Item Blocks */
+.trending-tags-container a {
+  display: inline-block;
+  background-color: #f2f2f2 !important;
+  /* Soft gray backing matching mockup values */
+  color: #444444 !important;
+  text-decoration: none !important;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 14px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Interactive Hover Feedback Logic */
+.trending-tags-container a:hover {
+  background-color: #b30f0f !important;
+  /* Matches main theme corporate red signature */
+  color: #ffffff !important;
+}
+
+/* Mobile Breakpoint Adjustments */
+@media (max-width: 767px) {
+  .jago-trending-wrapper {
+    padding: 10px 0;
+  }
+
+  .trending-label {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .trending-tags-container a {
+    font-size: 13px;
+    padding: 5px 12px !important;
+  }
+}
+
+/* ================================================================= */
+/* STYLE STACK: FIFA WORLD CUP 2026 MODULE                           */
+/* ================================================================= */
+
+.homepage-fifa-wc-block {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Noto Serif Bengali", Arial, Helvetica, sans-serif !important;
+}
+
+/* Base Portal Container Frame styling */
+.fifa-wc-26-portal-container {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #eef2f5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Branding Header Banners Layout rules */
+.fifa-wc-26-banner-header {
+  margin-bottom: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fifa-wc-26-banner-header img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================================================================= */
+/* SUB-COMPONENT: MATCH FIXTURES CAROUSEL PACK                       */
+/* ================================================================= */
+.wc-carousel-outer-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.wc-slider-inner {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  background: #f8f9fa;
+  padding: 0 40px;
+  scrollbar-width: none;
+  /* Hides track in Firefox */
+  -ms-overflow-style: none;
+  /* Hides track in IE/Edge */
+}
+
+.wc-slider-inner::-webkit-scrollbar {
+  display: none;
+  /* Hides track in Chrome/Safari */
+}
+
+/* Individual Slide Column Blocks */
+.wc-slide-col {
+  flex-shrink: 0;
+  width: 25%;
+  /* Default view layout: 4 matches active inline */
+  box-sizing: border-box;
+}
+
+.wc-match-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 10px 10px;
+  height: 85px;
+  border-right: 1px solid #e5e5e5;
+  background: #f8f9fa;
+}
+
+.wc-slide-col:last-child .wc-match-card {
+  border-right: none;
+}
+
+/* Team Profile Metadata Elements */
+.wc-team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+  text-align: center;
+}
+
+.wc-team-info .flag {
+  width: 30px;
+  height: auto;
+  border: 1px solid #eee;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 4px;
+}
+
+.wc-team-info .wc-team-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+/* Score/Status Box */
+.wc-match-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+
+.wc-match-status .wc-score {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1;
+}
+
+.wc-status-badge {
+  font-size: 10px;
+  font-weight: 600;
+  color: #666666;
+  background: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 10px;
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Navigation Arrow System Layout controls */
+.wc-custom-control {
+  position: absolute;
+  top: 0;
+  background: #f8f9fa;
+  border: none;
+  height: 100%;
+  width: 40px;
+  cursor: pointer;
+  z-index: 10;
+  color: #444444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.wc-custom-control:hover {
+  background: #edf2f7;
+  color: #000000;
+}
+
+.wc-custom-control.left-arrow {
+  left: 0;
+  border-right: 1px solid #e5e5e5;
+}
+
+.wc-custom-control.right-arrow {
+  right: 0;
+  border-left: 1px solid #e5e5e5;
+}
+
+/* ================================================================= */
+/* SUB-COMPONENT: NEWS CARDS GRID SYSTEM                             */
+/* ================================================================= */
+.flex-container {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+
+.fifa-wc-26-news-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: all 0.25s ease-in-out;
+}
+
+.fifa-wc-26-news-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.fifa-wc-26-card-img-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* Pure 16:9 Aspect Ratio Lock Box */
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.fifa-wc-26-card-img-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fifa-wc-26-card-body-custom {
+  padding: 12px 14px;
+}
+
+.fifa-wc-26-card-body-custom .card-title-link {
+  font-size: 15px;
+  font-weight: 400;
+  color: #1e293b;
+  line-height: 1.5;
+  text-decoration: none !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* Strict typographic ellipsis safety system */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.15s ease-in-out;
+}
+
+.fifa-wc-26-news-card:hover .card-title-link {
+  color: #cc0000;
+}
+
+/* ================================================================= */
+/* RESPONSIVE RESPOND BREAKPOINTS                                    */
+/* ================================================================= */
+
+/* Wide Monitor View Optimization */
+@media (min-width: 1200px) {
+  .fifa-wc-26-portal-container {
+    padding: 24px 24px 4px;
+  }
+
+  .fifa-wc-26-card-body-custom .card-title-link {
+    font-size: 16px;
+  }
+
+  .mobile-banar {
+    display: none;
+  }
+}
+
+/* Laptop View Optimization */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .mobile-banar {
+    display: none;
+  }
+
+  .wc-slide-col {
+    width: 33.333%;
+  }
+
+  /* Show 3 matches inline */
+}
+
+/* Tablet View Optimization */
+@media (min-width: 768px) and (max-width: 991px) {
+  .mobile-banar {
+    display: none;
+  }
+
+  .fifa-wc-26-portal-container {
+    padding: 16px 16px 0;
+  }
+
+  .wc-slide-col {
+    width: 50%;
+  }
+
+  /* Show 2 matches inline */
+  .fifa-wc-26-news-card {
+    margin-bottom: 16px;
+  }
+
+  .fifa-wc-26-card-body-custom .card-title-link {
+    font-size: 14px;
+  }
+}
+
+/* Smartphone View Optimization (Mobile Layout Transformation) */
+@media (max-width: 767px) {
+  .desktop-banar {
+    display: none;
+  }
+
+  .fifa-wc-26-portal-container {
+    padding: 12px 12px 4px;
+    border-radius: 4px;
+  }
+
+  /* Matches Swipe Stripping */
+  .wc-slider-inner {
+    padding: 0 10px;
+  }
+
+  .wc-slide-col {
+    width: 75%;
+  }
+
+  /* Peek optimization card preview trick */
+  .wc-custom-control {
+    display: none !important;
+  }
+
+  /* Hide heavy desktop buttons */
+
+  /* Convert grid into vertical stack listing rules */
+  .news-card-grid-item {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .fifa-wc-26-news-card {
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid #edf2f7;
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: 12px 0;
+  }
+
+  .fifa-wc-26-news-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .fifa-wc-26-content-row>div:last-child .fifa-wc-26-news-card {
+    border-bottom: none;
+  }
+
+  /* Image sizing on lists */
+  .fifa-wc-26-card-img-wrapper {
+    width: 110px;
+    min-width: 110px;
+    height: 70px;
+    padding-bottom: 0;
+    border-radius: 4px;
+  }
+
+  .fifa-wc-26-card-body-custom {
+    padding: 0 0 0 12px;
+    flex: 1;
+  }
+
+  .fifa-wc-26-card-body-custom .card-title-link {
+    font-size: 14px;
+    line-height: 1.4;
+    -webkit-line-clamp: 3;
+  }
+}
+
+
+/* =========================================================================
+   1. NEWS STREAM SECTION & STRUCTURE ARCHITECTURE
+   ========================================================================= */
+.news_stream_section {
+    font-family: "Noto Serif Bengali", 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    padding: 20px 0;
+    background-color: #ffffff;
+}
+
+.news_stream_section a {
+    text-decoration: none !important;
+    color: #222222;
+    transition: color 0.2s ease;
+}
+
+.news_stream_section a:hover h2,
+.news_stream_section a:hover h3 {
+    color: #1194FF;
+}
+
+/* Master Grid Layout Wrappers */
+.main_content_stream {
+    box-sizing: border-box;
+    padding-right: 15px;
+}
+
+.dynamic_right_sidebar {
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Flexbox rows to safely handle multi-column scaling */
+.layout_row_item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.layout_row_item.no_border,
+.layout_row_item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Responsive Column Dividers */
+@media (min-width: 992px) {
+    .border_right_divider {
+        border-right: 1px solid #e0e0e0;
+    }
+}
+@media (max-width: 991px) {
+    .border_right_divider {
+        border-right: none;
+        border-bottom: 1px dashed #e0e0e0;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+/* Responsive Column Dividers */
+@media (min-width: 992px) {
+    .border_left_divider {
+        border-left: 1px solid #e0e0e0;
+    }
+}
+@media (max-width: 991px) {
+    .border_left_divider {
+        border-left: none;
+        border-bottom: 1px dashed #e0e0e0;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+/* Red Bullet Accent Badges */
+.red_bullet_title {
+    display: block;
+    font-size: 13px;
+    color: #c00c0c;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.bullet_dot {
+    font-size: 8px;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+/* =========================================================================
+   2. ARTICLE CARD VARIANTS (LEAD, STACKED, GRID, HORIZONTAL)
+   ========================================================================= */
+
+/* Main Lead Big Block Card */
+.main_lead_card { display: block; }
+.main_lead_image_wrap { position: relative; }
+.main_lead_image_wrap img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.img_caption {
+    font-size: 11px;
+    color: #777;
+    margin-top: 4px;
+    display: block;
+}
+.main_lead_text_box h1 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 10px 0;
+    color: #111;
+}
+.main_lead_text_box p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+@media (min-width: 768px) {
+    .main_lead_text_box h1 { margin-top: 0; }
+}
+
+/* Row 1 Side Stacked Thumb List */
+.side_stacked_story_card {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px dashed #ddd;
+    width: 100%;
+}
+.side_stacked_story_card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.side_stacked_story_card > a {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+.side_stacked_thumb {
+    width: 85px;
+    min-width: 85px;
+    height: 60px;
+    margin-left: 12px;
+    order: 2;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.side_stacked_thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.side_stacked_content {
+    order: 1;
+    flex-grow: 1;
+}
+.side_stacked_content h3 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+    color: #222;
+}
+
+/* Row 2: Basic Grid Blocks */
+.grid_block_card { display: block; }
+.grid_block_thumb img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+.grid_block_content h3 {
+    font-size: 14px;
+    font-weight: 550;
+    line-height: 1.4;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .grid_block_card { margin-bottom: 15px; }
+}
+
+/* Row 3: Horizontal Card Structure [FIXED] */
+.horizontal_thumb_card {
+    margin-bottom: 20px;
+    width: 100%;
+}
+.thumb_card_link {
+    display: flex !important;
+    flex-direction: column; /* Stacks header row and excerpt vertically */
+    width: 100%;
+}
+.horiz_thumb_header {
+    display: flex;
+    flex-direction: row; /* Keeps image and text side-by-side */
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 8px; /* Space between the header and the description beneath it */
+}
+.horiz_thumb_image {
+    width: 100px;
+    min-width: 100px;
+    height: 70px;
+    margin-right: 12px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.horiz_thumb_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.horiz_thumb_content {
+    flex: 1;
+}
+.horiz_thumb_content h3 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+    color: #111111;
+}
+.thumb_card_link:hover h3 { color: #007454; }
+.horiz_thumb_excerpt {
+    font-size: 12.5px;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0;
+    width: 100%; /* Spans full width under the image */
+}
+
+/* Row 4: Custom Center Features & Text Streams */
+.text_news_list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.text_news_item {
+    padding: 15px 0;
+    border-bottom: 1px dotted #cccccc;
+}
+.text_news_item:first-child { padding-top: 0; }
+.text_news_item:last-child { border-bottom: none; padding-bottom: 0; }
+.text_news_item h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.center_feature_card {
+    display: flex;
+    flex-direction: column;
+}
+.feature_img_wrap img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.feature_content h2 {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 12px 0 8px 0;
+}
+.feature_content p {
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Row 5: Latest News Section Footer Block */
+.latest_section_wrapper {
+  margin-top: 10px;
+  padding-top: 15px;
+}
+
+.section_title_main {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111111;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.latest_news_card {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  padding: 5px 0;
+}
+
+.latest_news_card a {
+  display: block;
+  width: 100%;
+}
+
+.latest_news_card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0;
+  color: #222222;
+}
+
+/* Adjust horizontal rule behavior for the wrapper row */
+.layout_row_item.no_border {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* =========================================================================
+   3. RIGHT SIDEBAR MODULES & AD STATIONS
+   ========================================================================= */
+.sidebar_widget_box {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 15px auto;
+}
+
+.match_score_widget {
+    width: 100%;
+    border: 2px solid #580404;
+    border-radius: 4px;
+    background-color: #72002d;
+    color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    text-align: center;
+}
+.scorecard_banner {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.scorecard_header_title {
+    background-color: #580404;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 5px;
+    border-bottom: 1px solid #680000;
+}
+.scorecard_row_link {
+    color: #ffffff !important;
+    display: block;
+}
+.scorecard_match_row {
+    padding: 10px 8px;
+    border-bottom: 1px solid #680000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: background-color 0.2s ease;
+}
+.scorecard_row_link:last-child .scorecard_match_row { border-bottom: none; }
+.scorecard_row_link:hover .scorecard_match_row { background-color: #5b0024; }
+.scorecard_team_side {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13.5px;
+    margin: 2px 4px;
+}
+.flag_icon {
+    border: 0.5px solid #dddddd;
+    margin: 0 4px;
+    vertical-align: middle;
+    object-fit: cover;
+}
+.team_label { font-weight: 500; }
+.vs_divider { margin-left: 6px; color: #cca3b3; }
+.match_time_stamp { font-size: 11.5px; color: #ffd6e6; margin-left: 5px; }
+
+/* Ads Layout Packages */
+.sidebar_ad_wrapper {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 15px auto;
+    overflow: hidden;
+}
+.inline_strip_margin { margin-top: 15px; }
+.ad_banner_container {
+    width: 100%;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.mock_ad_graphic {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Aligned Mini News Stream Widget */
+.sidebar_latest_news_stream {
+    width: 100%;
+    max-width: 300px;
+    margin: 15px auto;
+}
+.sidebar_latest_news_card {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+.sidebar_latest_news_card:last-child { border-bottom: none; }
+.sidebar_latest_news_card a {
+    color: #222222 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.sidebar_news_card_media {
+    width: 85px;
+    height: 65px;
+    min-width: 85px;
+    margin-left: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    order: 2;
+}
+.sidebar_news_card_media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sidebar_news_card_info { order: 1; flex-grow: 1; }
+.sidebar_news_card_info h3 {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.45;
+    margin: 0;
+    color: #2b2b2b;
+    text-align: left;
+}
+.sidebar_latest_news_card a:hover .sidebar_news_card_info h3 { color: #1194FF; }
+.card_accent_tag { color: #f12d0f; font-weight: bold; display: inline-block; }
+.accent_dot { font-size: 9px; margin-left: 1px; vertical-align: middle; }
+.slot_footer_ad { margin-top: 20px; }
+
+
+
+/* =========================================================================
+   OPINION SECTION STYLES (মতামত)
+   ========================================================================= */
+
+.opinion-section-area {
+    padding-top: 20px;
+    padding-bottom: 35px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.opinion-title {
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+    padding: 0 0 15px;
+    line-height: 32px;
+    color: #000000;
+    margin: 0;
+}
+
+.opinion-title a {
+    background: transparent;
+    color: #000000;
+    padding-right: 15px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* Structural Divider Columns */
+.border-right1 {
+    border-right: 1px solid #ddd;
+}
+
+.border-right1:last-child {
+    border-right: none;
+}
+
+/* Individual Content Box Layout */
+.opinion-content-box {
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 5px 0;
+}
+
+/* Avatar Containers & Zoom Effect */
+.opinion-avatar-wrap {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    min-width: 100px; /* Prevents compression in dense grid modes */
+    margin-right: 15px;
+}
+
+.opinion-content-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .3s ease-in-out;
+}
+
+.opinion-content-box:hover img {
+    transform: scale(1.08);
+}
+
+/* Text Box Layout */
+.opinion-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.opinion-body a {
+    text-decoration: none;
+}
+
+.opinion-body .opinion-heading {
+    color: #333;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 6px;
+    line-height: 26px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.opinion-body .opinion-heading:hover {
+    color: #1194FF; 
+}
+
+.opinion-author {
+    font-size: 15px;
+    color: #2196f3;
+    line-height: 20px;
+}
+
+.opinion-author-link:hover .opinion-author {
+    text-decoration: underline;
+}
+
+/* =========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================= */
+
+@media only screen and (max-width: 767px) {
+    .border-right1 {
+        border-right: none; /* Strip out side borders for single column phones */
+    }
+    
+    .opinion-content-box {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .border-right1:last-child .opinion-content-box {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    
+    .opinion-content-box .opinion-body .opinion-heading {
+        font-size: 17px;
+        line-height: 24px;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+}
+
+
+/* =========================================================================
+   HOME SPECIAL AD BANNER STYLES
+   ========================================================================= */
+
+.ad-section-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Centered Flexible Banner Wrapper */
+.home-special-ad-wrapper {
+    display: inline-block;
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.ad-banner-link {
+    display: block;
+    width: 100%;
+}
+
+/* Forces the exact ad image to scale proportionally down on mobile screens */
+.responsive-ad-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 970px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* =========================================================================
+   RESPONSIVE RENDERING OPTIMIZATIONS
+   ========================================================================= */
+
+@media (max-width: 1200px) {
+    .ad-section-container .col-sm-12 {
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .ad-section-container {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ad-section-container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+
+/* =========================================================================
+   FOR YOU SECTION STYLES (আপনার জন্য)
+   ========================================================================= */
+
+section.nforyou {
+    padding-top: 25px;
+    padding-bottom: 45px;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+/* Header Section Title Styles */
+section.nforyou .section-title {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 8px;
+}
+
+section.nforyou .section-title h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+section.nforyou .section-title h2 a {
+    color: #222;
+    text-decoration: none;
+}
+
+/* Base Post Card Elements Container */
+section.nforyou .persCont {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 20px;
+}
+
+section.nforyou .content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fixed Aspect Ratio Thumbnail Box */
+section.nforyou .content-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    margin-bottom: 12px;
+}
+
+section.nforyou .content-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Zoom Microinteraction */
+section.nforyou .persCont:hover .content-thumb img {
+    transform: scale(1.05);
+}
+
+/* Card Heading Text Styles */
+section.nforyou .content-title {
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Clips descriptive titles elegantly onto a max of two lines */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    transition: color 0.2s ease;
+}
+
+section.nforyou .persCont:hover .content-title {
+    color: #007454; /* Highlight color on hover link */
+}
+
+/* =========================================================================
+   RESPONSIVE BREAKPOINTS (MEDIA QUERIES)
+   ========================================================================= */
+
+/* Tablets / Medium Viewports */
+@media (max-width: 991px) {
+    section.nforyou {
+        padding-bottom: 25px;
+    }
+    section.nforyou .content-title {
+        font-size: 15px;
+        line-height: 22px;
+    }
+}
+
+/* Mobile Devices / Small Viewports */
+@media (max-width: 767px) {
+    section.nforyou {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
+    .foryou-grid-row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    
+    .foryou-column {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    section.nforyou .content-title {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 15px;
+    }
+}
+
+/* =========================================================================
+   VIDEO SECTION STYLES (ভিডিও)
+   ========================================================================= */
+
+.new-videosection {
+    padding: 35px 0;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+/* --- Section Header and Category Navigation --- */
+.video-section-tittle {
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.video-section-tittle h2 {
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.video-section-tittle h2 .main-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #111;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.video-section-tittle h2 .sub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 15px;
+}
+
+.video-section-tittle h2 .sub-links a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.video-section-tittle h2 .sub-links a:hover {
+    color: #e7280c; /* Highlight sub-links to red on hover action */
+}
+
+/* --- General Components (Media Box & Aspect Ratio) --- */
+.new-videosection a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.new-videosection .thumb-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Guarantees layout never breaks due to varying image sizes */
+    background-color: #000;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.new-videosection .thumb-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.new-videosection a:hover .thumb-wrapper img {
+    transform: scale(1.04);
+}
+
+/* --- Video Play UI Buttons Overlay --- */
+.bl-home-video-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    height: 55px;
+    background: rgba(231, 40, 12, 0.9); /* Primary Red theme accent */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background 0.2s, transform 0.2s ease-in-out;
+}
+
+/* Standard HTML/CSS CSS Play triangle shape */
+.bl-home-video-button .play-icon {
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid #fff;
+    margin-left: 4px;
+}
+
+.bl-home-video-button.small-btn {
+    width: 36px;
+    height: 36px;
+}
+
+.bl-home-video-button.small-btn .play-icon {
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 11px solid #fff;
+    margin-left: 3px;
+}
+
+.new-videosection a:hover .bl-home-video-button {
+    background: rgba(0, 0, 0, 0.85);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* --- Content Typographic Profiles --- */
+.featured-video-card .s-newvideo-contenttext h2 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #222;
+    margin: 8px 0 0 0;
+}
+
+.grid-item-box .sm-newvideo-contenttext h2 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #333;
+    margin: 6px 0 0 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Uniform card rows by capping lines cleanly */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.new-videosection a:hover h2 {
+    color: #e7280c;
+}
+
+/* Spacing layout helpers for card lists */
+.grid-item-box {
+    margin-bottom: 20px;
+}
+
+/* =========================================================================
+   RESPONSIVE BREAKPOINTS (MEDIA QUERIES)
+   ========================================================================= */
+
+/* Desktop Display Balancing Structure */
+@media (min-width: 992px) {
+    .display-grid-flex {
+        display: flex;
+    }
+    .video-featured-wrap {
+        padding-right: 10px;
+    }
+    .video-grid-wrap {
+        padding-left: 10px;
+    }
+}
+
+/* Tablet Viewports Layout Mapping */
+@media (max-width: 991px) {
+    .video-featured-wrap {
+        margin-bottom: 30px;
+    }
+    .featured-video-card .s-newvideo-contenttext h2 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+/* Mobile Screens / Dynamic Wrap Formatting */
+@media (max-width: 767px) {
+    .video-section-tittle h2 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .video-section-tittle h2 .sub-links {
+        gap: 10px 14px;
+    }
+    .grid-item-box .sm-newvideo-contenttext h2 {
+        font-size: 14px;
+        line-height: 21px;
+    }
+}
+
+/* =========================================================================
+   SPORTS TOP ADVERTISEMENT STYLES
+   ========================================================================= */
+
+.sports-top-adbox {
+    margin: 12px 0;
+    width: 100%;
+    background: #f5f5f5; /* Light grey block backdrop */
+    padding: 10px 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+    /* Forces absolute centering inside this block */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Fluid internal wrapper container */
+.ad-responsive-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    
+    /* Double-reinforces flex centering regardless of parent theme rules */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Link element layout rule */
+.ad-banner-link {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    max-width: 100%;
+    text-decoration: none;
+    line-height: 0;
+}
+
+/* Responsive Image Fluid Rule */
+.ad-banner-image {
+    max-width: 100%;
+    height: auto; 
+    display: block;
+    border: 0;
+    margin: 0 auto !important; /* Forces layout margins to balance evenly on both sides */
+}
+
+/* =========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================= */
+
+@media (max-width: 768px) {
+    .sports-top-adbox {
+        padding: 8px 0;
+        margin: 8px 0;
+    }
+}
+
+/* =========================================================================
+   SPORTS SECTION SYSTEM STYLES
+   ========================================================================= */
+
+section.sports-content-section {
+    padding: 25px 0;
+    background: #ffffff;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    margin: 0 0 30px 0 !important;
+    font-family: 'Noto Serif Bengali', Arial, sans-serif !important;
+}
+
+/* --- Section Top Bar Title Configurations --- */
+.sports-title-here {
+    border-bottom: 2px solid #333333;
+    margin-bottom: 20px;
+    padding-bottom: 6px;
+    display: flex;
+    align-items: baseline;
+}
+
+.sports-title-here h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.sports-title-here h2 a.main-title {
+    color: #2b2b2b;
+    text-decoration: none;
+}
+
+.sports-title-here .sports-category {
+    margin-left: 15px;
+    display: inline-block;
+}
+
+.sports-title-here .sports-category a {
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 12px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sports-title-here .sports-category a:hover {
+    color: #e7280c; /* Highlight link on mouse hover */
+}
+
+/* --- Base Article Structural Box Configurations --- */
+.sports-content-box {
+    background: #ffffff;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.sports-content-thum {
+    overflow: hidden;
+    position: relative;
+    background-color: #f5f5f5;
+}
+
+.sports-content-thum img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sports-content-box:hover .sports-content-thum img {
+    transform: scale(1.04); /* Smooth zooming image lens framework animation */
+}
+
+.sports-content {
+    padding-top: 10px;
+}
+
+.sports-content a {
+    text-decoration: none;
+}
+
+/* --- Left Column Layout Details (Featured Large Story) --- */
+.lead-title {
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #111111;
+    margin: 8px 0 10px 0;
+}
+
+.lead-title:hover, .grid-sub-title:hover {
+    color: #007454; /* Clean premium editorial palette color action */
+}
+
+.lead-excerpt {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* --- Right Column Layout Details (2x2 Grid Structures) --- */
+.grid-sub-title {
+    font-size: 15px;
+    line-height: 1.45;
+    font-weight: 600;
+    color: #222222;
+    margin: 5px 0 0 0;
+}
+
+/* Alert/Highlight badge prefix inside headline components */
+.news-badge-red {
+    color: #e7280c;
+    font-weight: 700;
+    display: block;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+/* Fixes block horizontal heights cleanly across grid systems */
+.secondary-grid-side .news-list {
+    margin-bottom: 5px;
+}
+
+/* =========================================================================
+   RESPONSIVE DESIGN ADAPTATIONS (MEDIA BREAKPOINTS)
+   ========================================================================= */
+
+/* Tablets or Smaller Desktop Interfaces */
+@media (max-width: 991px) {
+    .lead-title {
+        font-size: 19px;
+    }
+    .grid-sub-title {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Devices (Cascading Column Breaks) */
+@media (max-width: 767px) {
+    section.sports-content-section {
+        padding: 15px 0;
+    }
+    
+    .featured-lead-side {
+        margin-bottom: 15px;
+        border-bottom: 1px dashed #dddddd;
+        padding-bottom: 15px;
+    }
+    
+    .lead-title {
+        font-size: 20px;
+    }
+
+    /* Modifies secondary listings into dynamic list elements for better scanning */
+    .thumbnail-aside-card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .thumbnail-aside-card .sports-content-thum {
+        width: 35%; /* Fixed scaled column allocation context */
+        flex-shrink: 0;
+    }
+    
+    .thumbnail-aside-card .sports-content {
+        width: 65%;
+        padding-top: 0;
+    }
+    
+    .grid-sub-title {
+        font-size: 14px;
+        margin-top: 0;
+    }
+}

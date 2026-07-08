@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap');
 
+/* Apply globally to all elements */
+* {
+  font-family: "Noto Serif Bengali", Arial, Helvetica, sans-serif !important;
+}
+
 /* ================================================================= */
 /* GLOBAL LOGIC & DESIGN SYSTEM VARIABLES                            */
 /* ================================================================= */
 :root {
-  --primary-red: #f12d0f;
+  --primary-red: #b30f0f;
   --bg-light-gray: #fafafa;
   --border-gray: #ececec;
   --text-main: #333333;
@@ -232,7 +237,6 @@ html {
 body {
   font-family: "Noto Serif Bengali", Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
-  padding-top: 46px;
 }
 
 /* ================================================================= */
@@ -3023,3 +3027,1426 @@ section.country-content-section {
     /* Fully downscaled blocks across micro viewports */
   }
 }
+
+/* ==========================================================================
+   Economy Section Styling Rules
+   ========================================================================== */
+
+/* Section Background Color */
+.economics-section-here {
+  padding: 30px 0;
+  background-color: #f5f5f5;
+}
+
+/* Title Styling */
+.economics-section-title h3 {
+  border-bottom: none !important;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.economics-section-title a {
+  color: #222;
+  text-decoration: none;
+}
+
+/* Side Column List Items: Standard */
+.economics-list-content-box a {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  text-decoration: none !important;
+  /* Force no underline */
+  color: #333;
+}
+
+.economics-list-content {
+  flex: 1;
+}
+
+.economics-list-content h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 650;
+  color: #333;
+}
+
+.economics-list-thum {
+  width: 85px;
+  flex-shrink: 0;
+}
+
+.economics-list-thum img {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+}
+
+/* Lead Item Styling (Removes underline and sets black color) */
+.economics-lead-content-box a {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+.economics-lead-content h3 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 15px 0;
+  line-height: 1.3;
+  color: #000 !important;
+}
+
+.economics-lead-content p {
+  font-size: 14px;
+  color: #000 !important;
+  margin: 0;
+}
+
+.economics-lead-thum img {
+  width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+
+  .col-md-3,
+  .col-md-6 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/*=========================================================
+        FIRST CARD OF BOTH SIDE COLUMNS
+=========================================================*/
+
+.left-col .first-item a,
+.right-col .first-item a {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-col .first-item .economics-list-r-thum,
+.right-col .first-item .economics-list-r-thum {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.left-col .first-item .economics-list-r-thum img,
+.right-col .first-item .economics-list-r-thum img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.left-col .first-item h3,
+.right-col .first-item h3 {
+  font-size: 22px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+/* Lead Item Styling */
+.economics-lead-thum img {
+  width: 100%;
+}
+
+.economics-lead-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 15px 0;
+  line-height: 1.3;
+  color: #000;
+  /* Sets text to black */
+  text-decoration: none;
+  /* Ensures no underline */
+}
+
+.economics-lead-content p {
+  font-size: 14px;
+  color: #000;
+  /* Sets text to black */
+  text-decoration: none;
+  /* Ensures no underline */
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+
+  .col-md-3,
+  .col-md-6 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* ==========================================================================
+   National News Section (জাতীয়) — matches live jagonews24.com styling
+   ========================================================================== */
+:root {
+  --primary-red: #b91c1c;
+}
+
+section.paddingTop20.national {
+  padding: 40px 0px;
+  font-family: "Noto Serif Bengali", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.paddingTop20.national * {
+  box-sizing: border-box;
+}
+
+/* ---- Category Title ---- */
+.paddingTop20.national .catTitle {
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.paddingTop20.national .catTitle a {
+  color: #1a1a1a;
+  text-decoration: none;
+  white-space: nowrap;
+  padding-right: 15px;
+}
+
+.paddingTop20.national .catTitle .liner {
+  flex: 1 1 auto;
+  height: 1px;
+  background-color: #dcdcdc;
+}
+
+/* ---- Single Block (article card) ---- */
+.paddingTop20.national .single-block {
+  margin-bottom: 20px;
+}
+
+.paddingTop20.national .img-box {
+  display: block;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.paddingTop20.national .img-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform .3s ease;
+}
+
+.paddingTop20.national .single-block:hover .img-box img {
+  transform: scale(1.04);
+}
+
+.paddingTop20.national .details h4 {
+  margin: 10px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #1a1a1a;
+}
+
+.paddingTop20.national .details h4 a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.paddingTop20.national .details h4 a:hover {
+  color: var(--primary-red);
+}
+
+/* Tags are present in markup for SEO but not shown visually, matching live layout */
+.paddingTop20.national .main-content .meta {
+  display: none;
+}
+
+/* Smaller cards in the 4-column row */
+.paddingTop20.national .col-sm-3 .details h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ---- Sidebar: জাগো মানবতা widget ---- */
+
+.paddingTop20.national .aside .fb-live {
+  background-color: #f5f5f5;
+  padding: 0 0 12px 0;
+  overflow: hidden;
+}
+
+/* Remove all unexpected blue underlines/colors on links inside the widget */
+.paddingTop20.national .aside .fb-live a {
+  text-decoration: none !important;
+}
+
+/* Widget Header */
+.paddingTop20.national .aside .fb-live h2.no-margin {
+  background-color: #eaeaea;
+  padding: 10px 14px;
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.paddingTop20.national .aside .fb-live h2.no-margin a {
+  color: #1a1a1a;
+}
+
+/* Main Content Blocks */
+.paddingTop20.national .aside .single-block {
+  margin-bottom: 0;
+}
+
+/* Featured Image & Play Button Fix */
+.paddingTop20.national .aside .img-box {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.paddingTop20.national .aside .img-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.paddingTop20.national .aside .img-box .fa-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.88);
+  border-radius: 50%;
+  color: #c91f22;
+  font-size: 16px;
+  z-index: 2;
+}
+
+/* Main Headline Typography */
+.paddingTop20.national .aside .single-block>h4 {
+  margin: 10px 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px 14px 0;
+  line-height: 1.35;
+}
+
+.paddingTop20.national .aside .single-block>h4 a {
+  color: #2c2c2c;
+}
+
+/* Media List Items (Compacted Height) */
+.paddingTop20.national .aside .details {
+  margin-top: 6px;
+}
+
+.paddingTop20.national .aside .media {
+  padding: 8px 0;
+  margin-top: 0;
+  border-bottom: 1px dashed #dcdcdc;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.paddingTop20.national .aside .media:last-child {
+  border-bottom: none;
+}
+
+.paddingTop20.national .aside .media-body {
+  flex: 1;
+}
+
+.paddingTop20.national .aside .media-left {
+  flex: 0 0 auto;
+}
+
+.paddingTop20.national .aside .media-left .media-object {
+  width: 70px;
+  height: 50px;
+  object-fit: cover;
+  display: block;
+}
+
+.paddingTop20.national .aside .media-heading {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.paddingTop20.national .aside .media-heading a {
+  color: #333333;
+}
+
+/* Red Footer Button */
+.paddingTop20.national .aside .allnews {
+  margin-top: 8px;
+}
+
+.paddingTop20.national .aside .allnews a {
+  background-color: #c91f22;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.paddingTop20.national .aside .allnews svg {
+  display: none;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 991px) {
+  .paddingTop20.national .col-sm-3 {
+    width: 50%;
+    float: left;
+  }
+
+  .paddingTop20.national .aside {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  section.paddingTop20.national {
+    padding: 25px 0;
+  }
+
+  .paddingTop20.national .catTitle {
+    font-size: 22px;
+  }
+
+  .paddingTop20.national .col-sm-6,
+  .paddingTop20.national .col-sm-3 {
+    width: 50%;
+    float: left;
+  }
+
+  .paddingTop20.national .details h4 {
+    font-size: 15px;
+  }
+
+  .paddingTop20.national .col-sm-3 .details h4 {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .paddingTop20.national .col-sm-6 {
+    width: 100%;
+    float: none;
+  }
+
+  .paddingTop20.national .aside .media-left .media-object {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+/* ===========================================================================================================================================
+   Category Grid Section (Lifestyle / Tech / Feature / Jago Jobs/ Health / Education / Law / Meetings )
+   =========================================================================================================================================== */
+
+:root {
+  --primary-red: #b91c1c;
+}
+
+section.paddingTopBottom20.category-grid-section {
+  padding: 20px 0;
+  font-family: "Noto Serif Bengali", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.category-grid-section * {
+  box-sizing: border-box;
+}
+
+.category-grid-section .main-content.category {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0;
+}
+
+.category-grid-section .col-sm-3 {
+  width: 25%;
+  padding: 0 15px;
+}
+
+/* Remove the fixed inline height from the old markup — let content define height */
+.category-grid-section .single-cat-height {
+  height: auto;
+}
+
+/* ---- Column Title ---- */
+.category-grid-section .catTitle {
+  display: flex;
+  align-items: center;
+  margin: 0 0 15px;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding-bottom: 8px;
+}
+
+.category-grid-section .catTitle a {
+  color: #1a1a1a;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.category-grid-section .catTitle .liner {
+  flex: 1 1 auto;
+  height: 2px;
+  background: #b91c1c;
+  /* Use your primary red */
+  margin-left: 10px;
+}
+
+/* ---- Featured Image + Headline ---- */
+.category-grid-section .single-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-grid-section .img-box {
+  width: 100%;
+  height: 180px;
+  /* Set a specific height for all images */
+  overflow: hidden;
+  /* Ensures the zoomed part doesn't spill out */
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.category-grid-section a:focus {
+  outline: 2px solid var(--primary-red);
+  outline-offset: 2px;
+}
+
+.category-grid-section .img-box img {
+  width: 100%;
+  height: 100%;
+  /* Forces the image to fill the container height */
+  object-fit: cover;
+  /* Crops the image proportionally to fill the area */
+  object-position: center;
+  /* Keeps the focus in the middle */
+  display: block;
+  transition: transform .3s ease;
+}
+
+.category-grid-section .single-block:hover .img-box img {
+  transform: scale(1.04);
+}
+
+.category-grid-section .single-block>h4 {
+  margin: 12px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #1a1a1a;
+}
+
+.category-grid-section .single-block>h4 a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.category-grid-section .single-block>h4 a:hover {
+  color: var(--primary-red);
+}
+
+/* ---- List items below featured image ---- */
+.category-grid-section .details {
+  margin-top: 4px;
+}
+
+.category-grid-section .media {
+  padding: 12px 0;
+  border-top: 1px dashed #ddd;
+}
+
+.category-grid-section .media-heading {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.category-grid-section .media-heading a {
+  color: #333;
+  text-decoration: none;
+}
+
+.category-grid-section .media-heading a:hover {
+  color: var(--primary-red);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablets: 2 columns */
+@media (max-width: 991px) {
+  .category-grid-section .col-sm-3 {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 767px) {
+  section.paddingTopBottom20.category-grid-section {
+    padding: 15px 0;
+  }
+
+  .category-grid-section .catTitle {
+    font-size: 20px;
+  }
+
+  .category-grid-section .single-block>h4 {
+    font-size: 16px;
+  }
+
+  .category-grid-section .media-heading {
+    font-size: 15px;
+  }
+}
+
+/* Mobile phones: 1 column */
+@media (max-width: 576px) {
+  .category-grid-section .col-sm-3 {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .category-grid-section .col-sm-3:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/* ==========================================================================
+   Binodon Section
+   ========================================================================== */
+
+/* --- Section Wrapper --- */
+.binodon-section {
+  padding: 30px 0;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 30px;
+}
+
+/* --- Force Black Text and No Underlines --- */
+.binodon-section a,
+.binodon-section h2,
+.binodon-section h3 {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+/* --- Header Section --- */
+.binodon-header {
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: baseline;
+}
+
+.binodon-header h2 {
+  margin: 0 15px 0 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* --- General Item Styling --- */
+/* Applied to sidebars and bottom row items */
+.binodon-item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  display: block;
+}
+
+.binodon-item img {
+  width: 100%;
+  height: 160px;
+  /* Forces uniform alignment */
+  object-fit: cover;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.binodon-item h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0;
+  height: 42px;
+  /* Restricts headline to 2 lines for alignment */
+  overflow: hidden;
+}
+
+/* --- Lead Article Styling --- */
+.binodon-lead {
+  margin-bottom: 15px;
+}
+
+.binodon-lead img {
+  width: 100%;
+  display: block;
+}
+
+.binodon-lead h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 15px 0 35px 0 !important;
+  line-height: 1.2;
+}
+
+.binodon-lead p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 0 !important;
+  /* This removes the space below the paragraph */
+}
+
+/* --- Bottom Row Sync --- */
+/* This ensures the bottom row matches sidebar spacing exactly */
+.binodon-bottom-row {
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 0 !important;
+}
+
+/* Ensure columns have no extra padding that shifts alignment */
+.binodon-bottom-row [class*="col-"] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Remove bottom border from the very last item in the sidebar columns */
+.col-md-3 .binodon-item:last-child {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+}
+
+/* Remove bottom border from the items in the bottom center row */
+.binodon-bottom-row .binodon-item:last-child {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+}
+
+/* Optional: If the items are in a separate container, remove the container's bottom border too */
+.binodon-bottom-row {
+  border-bottom: none !important;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* For Tablets (up to 991px) */
+@media (max-width: 991px) {
+  .binodon-header {
+    flex-direction: column;
+  }
+
+  .binodon-header h2 {
+    margin-bottom: 10px;
+  }
+
+  /* Ensure images in center column don't look too stretched */
+  .binodon-lead img {
+    height: auto;
+  }
+}
+
+/* For Mobile Phones (up to 767px) */
+@media (max-width: 767px) {
+  .binodon-section {
+    padding: 15px 0;
+  }
+
+  /* Stack all columns vertically */
+  .col-md-3,
+  .col-md-6 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust typography for smaller screens */
+  .binodon-header h2 {
+    font-size: 20px;
+  }
+
+  .binodon-lead h2 {
+    font-size: 18px;
+  }
+
+  /* Make images responsive */
+  .binodon-item img {
+    height: 200px;
+    /* Taller images on mobile for better touch/viewing */
+  }
+
+  /* Reset height constraint for headlines on mobile so text isn't cut off */
+  .binodon-item h3 {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+/* ================= SPECIAL REPORT SECTION START ================= */
+/* SPECIAL REPORT CSS */
+.special-report-section {
+    margin: 30px 0;
+    padding: 20px 0;
+    background: #f4e2e2 !important;
+}
+
+.special-report-title h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #1e2a1e;
+}
+
+/* 2x2 Grid Layout */
+.special-report-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Item Styling */
+.special-report-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.special-report-thum {
+    flex: 0 0 45%;
+}
+
+.special-report-thum img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.special-report-content {
+    flex: 1;
+    min-height: 180px; /* Matches image height for alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Text and Underline Removal */
+.special-report-section a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.special-report-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 8px 0;
+    color: #1e2a1e;
+}
+
+.special-report-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+    .special-report-grid {
+        grid-template-columns: 1fr;
+    }
+    .special-report-content {
+        min-height: auto; /* Reset for mobile */
+    }
+}
+/* ================= SPECIAL REPORT SECTION END ================= */
+
+
+/* ================= PHOTO GALLERY SECTION START ================= */
+
+.photo-gallery-section {
+    padding: 25px 0 !important;
+    background: #fff !important;
+    font-family: "Noto Serif Bengali", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.photo-gallery-section .container {
+    max-width: 1300px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+/* Section title */
+.photo-gallery-section .photo-gallery-title {
+    position: relative !important;
+    padding: 0 !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+}
+
+.photo-gallery-section .photo-gallery-title a {
+    text-decoration: none !important;
+    color: #1e2a1e !important;
+}
+
+.photo-gallery-section .photo-gallery-title .liner {
+    display: block !important;
+    width: 45px !important;
+    height: 3px !important;
+    margin-top: 8px !important;
+}
+
+/* Layout: carousel (left) + sidebar (right) */
+.photo-gallery-section .photo-gallery-layout {
+    display: grid !important;
+    grid-template-columns: 66% 34% !important;
+    gap: 30px !important;
+}
+
+/* ===== Carousel ===== */
+.photo-gallery-section .photo-gallery-carousel {
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 3px !important;
+    background: #000 !important;
+}
+
+/* ================= CAROUSEL FAILSAFE OVERRIDE START ================= */
+/* Forces track/item geometry regardless of theme conflicts */
+
+.photo-gallery-section .carousel-track {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    transition: transform 0.5s ease-in-out !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.photo-gallery-section .carousel-item {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    margin: 0 !important;   /* prevents drift from inherited div margins */
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.photo-gallery-section .carousel-item img {
+    width: 100% !important;
+    height: 480px !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #222 !important; /* visible placeholder tone instead of pure black if an image genuinely fails */
+}
+/* ================= CAROUSEL FAILSAFE OVERRIDE END ================= */
+
+.photo-gallery-section .carousel-caption {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    padding: 14px 20px !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.photo-gallery-section .carousel-caption a {
+    color: #fff !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    line-height: 1.4 !important;
+}
+
+/* Prev / Next buttons */
+.photo-gallery-section .carousel-arrow {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 44px !important;
+    height: 44px !important;
+    border: none !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    color: #333 !important;
+    font-size: 18px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background 0.2s ease !important;
+    z-index: 2 !important;
+}
+
+.photo-gallery-section .carousel-arrow:hover {
+    background: #fff !important;
+}
+
+.photo-gallery-section .carousel-arrow-left {
+    left: 15px !important;
+}
+
+.photo-gallery-section .carousel-arrow-right {
+    right: 15px !important;
+}
+
+/* ===== Sidebar ===== */
+.photo-gallery-section .photo-gallery-sidebar {
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 3px !important;
+}
+
+.photo-gallery-section .media-list {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.photo-gallery-section .media-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    padding: 14px !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+}
+
+.photo-gallery-section .media-item:last-child {
+    border-bottom: none !important;
+}
+
+.photo-gallery-section .media-thumb {
+    flex: 0 0 80px !important;
+    max-width: 80px !important;
+}
+
+.photo-gallery-section .media-thumb a {
+    display: block !important;
+    overflow: hidden !important;
+    border-radius: 3px !important;
+}
+
+.photo-gallery-section .media-thumb img {
+    width: 100% !important;
+    height: 60px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.photo-gallery-section .media-body {
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
+.photo-gallery-section .media-body a {
+    font-size: 20.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+    color: #1e2a1e !important;
+    text-decoration: none !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.photo-gallery-section .media-body a:hover {
+    color: #c1272d !important;
+}
+
+/* ================= Responsive Breakpoints ================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .photo-gallery-section .photo-gallery-layout {
+        grid-template-columns: 60% 40% !important;
+        gap: 20px !important;
+    }
+
+    .photo-gallery-section .carousel-item img {
+        height: 380px !important;
+    }
+
+    .photo-gallery-section .carousel-caption a {
+        font-size: 16px !important;
+    }
+}
+
+/* Small tablets / large phones: stack carousel above sidebar */
+@media (max-width: 767px) {
+    .photo-gallery-section .photo-gallery-layout {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .photo-gallery-section .carousel-item img {
+        height: 340px !important;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    .photo-gallery-section {
+        padding: 18px 0 !important;
+    }
+
+    .photo-gallery-section .container {
+        padding: 0 15px !important;
+    }
+
+    .photo-gallery-section .photo-gallery-title {
+        font-size: 19px !important;
+    }
+
+    .photo-gallery-section .carousel-item img {
+        height: 240px !important;
+    }
+
+    .photo-gallery-section .carousel-caption {
+        padding: 10px 14px !important;
+    }
+
+    .photo-gallery-section .carousel-caption a {
+        font-size: 14px !important;
+    }
+
+    .photo-gallery-section .carousel-arrow {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 15px !important;
+    }
+
+    .photo-gallery-section .media-thumb {
+        flex: 0 0 65px !important;
+        max-width: 65px !important;
+    }
+
+    .photo-gallery-section .media-thumb img {
+        height: 50px !important;
+    }
+
+    .photo-gallery-section .media-body a {
+        font-size: 13px !important;
+    }
+}
+
+/* ================= PHOTO GALLERY SECTION END ================= */
+
+
+
+/* ================= SITE FOOTER SECTION START ================= */
+
+.site-footer {
+    position: relative !important;
+    font-family: "Noto Serif Bengali", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    background: #fff !important;
+}
+
+.site-footer .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* ===== Logo + App Store Bar ===== */
+.site-footer .footer-logo-bar {
+    background: #e2e2e2 !important;
+    padding: 20px 0 !important;
+}
+
+.site-footer .footer-logo-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+}
+
+.site-footer .footer-logo img {
+    width: 220px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+.site-footer .footer-apps {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.site-footer .footer-apps img {
+    height: 42px !important;
+    width: auto !important;
+    display: block !important;
+}
+
+/* ===== About Text Bar ===== */
+.site-footer .footer-about-bar {
+    background: #fff !important;
+    padding: 25px 0 !important;
+}
+
+.site-footer .footer-heading {
+    font-size: 0 !important; /* hidden visually, kept for SEO/accessibility */
+    margin: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+.site-footer .footer-about-text {
+    margin: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    color: #4a5a4f !important;
+}
+
+/* ===== Bottom Bar ===== */
+.site-footer .footer-bottom-bar {
+    position: relative !important;
+    background: #f4f4f4 !important;
+    padding: 20px 0 !important;
+    border-top: 1px solid #e5e5e5 !important;
+}
+
+.site-footer .footer-bottom-row {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+}
+
+/* Contact info */
+.site-footer .footer-contact {
+    flex: 1 1 500px !important;
+    font-size: 13.5px !important;
+    color: #333 !important;
+    line-height: 1.9 !important;
+}
+
+.site-footer .footer-editor-line,
+.site-footer .footer-address-line,
+.site-footer .footer-contact-line {
+    margin: 0 0 4px 0 !important;
+}
+
+.site-footer .footer-icon {
+    width: 13px !important;
+    height: 13px !important;
+    margin-right: 4px !important;
+    color: #666 !important;
+    vertical-align: -1px !important;
+}
+
+.site-footer .footer-email {
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+/* Footer navigation menu */
+.site-footer .footer-nav {
+    flex: 0 0 auto !important;
+}
+
+.site-footer .footer-menu {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.site-footer .footer-menu li a {
+    display: block !important;
+    padding: 8px 16px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 3px !important;
+    font-size: 13px !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: all 0.2s ease !important;
+}
+
+.site-footer .footer-menu li a:hover {
+    background: #000 !important;
+    border-color: #000 !important;
+    color: #fff !important;
+}
+
+.site-footer .footer-menu li.active a {
+    background: #1e2a1e !important;
+    border-color: #1e2a1e !important;
+    color: #fff !important;
+}
+
+/* Floating buttons */
+.site-footer .footer-notify-btn,
+.site-footer .footer-scroll-top {
+    position: fixed !important;
+    right: 20px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    z-index: 999 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.site-footer .footer-notify-btn {
+    bottom: 80px !important;
+    background: #e7280c !important;
+    color: #fff !important;
+}
+
+.site-footer .footer-scroll-top {
+    bottom: 20px !important;
+    background: #fff !important;
+    color: #e7280c !important;
+    border: 1px solid #e7280c !important;
+}
+
+/* ================= Responsive Breakpoints ================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .site-footer .footer-logo img {
+        width: 190px !important;
+    }
+
+    .site-footer .footer-apps img {
+        height: 36px !important;
+    }
+}
+
+/* Small tablets / large phones: stack layout */
+@media (max-width: 767px) {
+    .site-footer .footer-logo-row {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .site-footer .footer-about-text {
+        font-size: 13.5px !important;
+    }
+
+    .site-footer .footer-bottom-row {
+        flex-direction: column !important;
+    }
+
+    .site-footer .footer-nav {
+        width: 100% !important;
+    }
+
+    .site-footer .footer-menu {
+        justify-content: center !important;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    .site-footer .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .site-footer .footer-logo-bar {
+        padding: 15px 0 !important;
+    }
+
+    .site-footer .footer-logo img {
+        width: 160px !important;
+    }
+
+    .site-footer .footer-apps {
+        gap: 8px !important;
+    }
+
+    .site-footer .footer-apps img {
+        height: 32px !important;
+    }
+
+    .site-footer .footer-about-bar {
+        padding: 18px 0 !important;
+    }
+
+    .site-footer .footer-about-text {
+        font-size: 13px !important;
+        line-height: 1.65 !important;
+    }
+
+    .site-footer .footer-bottom-bar {
+        padding: 16px 0 !important;
+    }
+
+    .site-footer .footer-contact {
+        font-size: 12.5px !important;
+    }
+
+    .site-footer .footer-menu {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .site-footer .footer-menu li a {
+        text-align: center !important;
+    }
+
+    .site-footer .footer-notify-btn,
+    .site-footer .footer-scroll-top {
+        width: 38px !important;
+        height: 38px !important;
+        right: 12px !important;
+    }
+
+    .site-footer .footer-notify-btn {
+        bottom: 68px !important;
+    }
+
+    .site-footer .footer-scroll-top {
+        bottom: 16px !important;
+    }
+}
+
+/* ================= SITE FOOTER SECTION END ================= */

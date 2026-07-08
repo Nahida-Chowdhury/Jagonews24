@@ -2396,9 +2396,9 @@ section.country-content-section {
 /* --- Category Links Sizes & Inner Gaps --- */
 .country-title-here .country-category a {
   color: #222222;
-  font-size: 15px;
+  font-size: 18px;
   /* Perfect proportional size matching your text reference */
-  font-weight: normal;
+  font-weight: bold;
   margin-left: 14px;
   /* Spacing between individual category items */
   text-decoration: none;
@@ -2473,27 +2473,6 @@ section.country-content-section {
   object-position: center top;
 }
 
-/* --- CHANGED: Isolated and updated map rules --- */
-.img-map-tall-container {
-  position: relative;
-  width: 100%;
-  height: auto;
-  /* Changed from 245px to allow dynamic scaling */
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
-
-.img-map-tall-container img {
-  width: 100%;
-  height: auto;
-  /* Changed from 100% so it doesn't stretch or warp */
-  max-height: 320px;
-  /* Optional cap to keep it proportional */
-  object-fit: contain;
-  /* Changed from cover to show the whole map */
-  display: block;
-}
 
 /* --- Corrected Title & Typography Palette Colors --- */
 .mini-title {
@@ -2551,7 +2530,7 @@ section.country-content-section {
 }
 
 .widget-heading {
-  font-size: 20px;
+  font-size: 24px;
   /* Increased from 16px to match the image scale */
   font-weight: normal;
   /* Removed the heavy 700 bold weight */
@@ -2562,44 +2541,59 @@ section.country-content-section {
   /* Ensures the correct serif style rendered in your image */
 }
 
+/* Update your existing container CSS */
 .widget-map-box {
   margin-bottom: 22px;
+  display: flex;
+  justify-content: center;
+  /* Centers the map */
 }
 
+/* Add this to control the SVG size specifically */
+.widget-map-box svg {
+  width: 100%;
+  /* It will fill the width of the container */
+  max-width: 250px;
+  /* Change this value to make it smaller or larger */
+  height: auto;
+  /* Keeps the map proportional */
+  display: block;
+}
+
+/* 1. Main Grid Layout */
 .widget-search-form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 10px;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  /* Two equal columns */
+  gap: 8px !important;
+  margin-top: 10px !important;
 }
 
-.form-row-split {
-  display: flex;
-  gap: 8px;
-}
-
-.form-row-split select,
-.form-row-split .widget-submit-btn {
-  width: 50%;
-  height: 34px;
-  font-size: 13px;
-  border-radius: 3px;
-  box-sizing: border-box;
-}
-
-.form-row-split select {
-  padding: 4px 8px;
-  border: 1px solid #cccccc;
+/* 2. Unified styles for Selects and the Button */
+.widget-search-form select,
+.widget-submit-btn {
+  width: 100% !important;
+  height: 38px !important;
+  padding: 5px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 3px !important;
+  font-size: 14px !important;
+  box-sizing: border-box !important;
   background-color: #ffffff;
+  /* Default background for selects */
   color: #333333;
 }
 
+/* 3. Button specific styling */
 .widget-submit-btn {
-  background-color: #8b0000;
-  color: #ffffff;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
+  background-color: #b31b1b !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 /* --- Mobile Responsiveness --- */

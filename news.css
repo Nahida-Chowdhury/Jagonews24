@@ -1,0 +1,1670 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap');
+
+/* Apply globally to all elements */
+* {
+    font-family: "Noto Serif Bengali", Arial, Helvetica, sans-serif !important;
+}
+
+/* ================================================================= */
+/* GLOBAL LOGIC & DESIGN SYSTEM VARIABLES                            */
+/* ================================================================= */
+:root {
+    --primary-red: #b30f0f;
+    --bg-light-gray: #fafafa;
+    --border-gray: #ececec;
+    --text-main: #333333;
+    --text-muted: #666666;
+}
+
+/* Base Wrapper Normalization */
+.jago-header-wrapper {
+    font-family: "Noto Serif Bengali", Arial, Helvetica, sans-serif !important;
+    color: var(--text-main);
+    background-color: #ffffff;
+    width: 100%;
+}
+
+/* ================================================================= */
+/* SECTION: TOP AD BANNER STYLES                                     */
+/* ================================================================= */
+.jago-top-ad-bar {
+    width: 100%;
+    background-color: var(--bg-light-gray);
+    padding: 5px 0;
+    /* Tightened top/bottom padding */
+    border-bottom: 1px solid var(--border-gray);
+    height: auto;
+    /* REMOVED 104px fixed height so it wraps perfectly around the 90px image */
+    line-height: 0;
+    /* Prevents inline text formatting gaps below the image */
+}
+
+.jago-ad-inner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jago-ad-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.jago-ad-slot a {
+    display: block;
+    margin: 0 auto;
+}
+
+.jago-ad-slot img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 0px;
+}
+
+/* ================================================================= */
+/* SECTION: JAGO NEWS MAIN LOGO & BRANDING BAR                       */
+/* ================================================================= */
+.jago-custom-header {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 0 5px 0;
+    /* Dropped bottom padding to 5px to eliminate gap before red nav bar */
+    margin-bottom: 0 !important;
+    /* Forces no margin below the branding header row */
+}
+
+/* Flex Container handling multi-device column wrapping flows */
+.jago-header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* Left Column: Stacked Date System */
+.jago-date-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.jago-date-primary {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.jago-date-secondary {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Center Column: Middle Branding Logo */
+.jago-logo-block {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jago-logo-block img {
+    max-width: 350px;
+    width: 100%;
+    /* Allows image sizing fluidity */
+    height: auto;
+    display: block;
+}
+
+/* Right Column: Social Media Anchor Layout configurations */
+.jago-social-block {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.jago-social-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.jago-social-list li {
+    margin: 0;
+    padding: 0;
+}
+
+.jago-social-list a,
+.social-container a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border-gray);
+    border-radius: 50%;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.jago-social-list a:hover,
+.social-container a:hover {
+    color: var(--primary-red);
+    border-color: var(--primary-red);
+    background-color: rgba(241, 45, 15, 0.03);
+}
+
+.jago-social-list svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Utility Layout Helper Rules */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+/* ================================================================= */
+/* MEDIA QUERY STACK: RESPONSIVE SCREEN BREAKPOINTS                 */
+/* ================================================================= */
+
+/* Tablet Viewport Optimization */
+@media (max-width: 991px) {
+    .jago-logo-block img {
+        max-width: 280px;
+        /* Scales logo down slightly so things fit perfectly */
+    }
+}
+
+/* Mobile Viewport Optimization (Stacks everything vertically) */
+@media (max-width: 767px) {
+
+    /* Hides ad banner container area layout on small mobile screens */
+    .jago-top-ad-bar {
+        display: none;
+    }
+
+    /* Changes row flex flow into vertical column matrices */
+    .jago-header-container {
+        flex-direction: column;
+        gap: 15px;
+        /* Adds consistent spacing between the sections */
+        text-align: center;
+    }
+
+    .jago-date-block,
+    .jago-logo-block,
+    .jago-social-block {
+        flex: none;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+/* ================================================================= */
+/* GLOBAL RESET: OVERSIZE OVERRIDES & DENSITY DEFIER                */
+/* ================================================================= */
+html {
+    font-size: 14px !important;
+    /* Forces normal site text proportions globally */
+}
+
+body {
+    font-family: "Noto Serif Bengali", Arial, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ================================================================= */
+/* STYLE STACK: JAGO NEWS MAIN RED NAVIGATION BAR                    */
+/* ================================================================= */
+.jago-main-nav {
+    width: 100%;
+    background-color: #b30f0f;
+    border: none;
+    margin-top: 0 !important;
+    box-sizing: border-box;
+
+    /* Sticky Navbar */
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.jago-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 46px;
+    position: relative;
+}
+
+/* Desktop Navigation Base */
+.jago-nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.jago-nav-links>li {
+    position: relative;
+    height: 100%;
+}
+
+.jago-nav-links>li>a {
+    display: flex;
+    align-items: center;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 11px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+.jago-nav-links>li:hover>a,
+.jago-nav-links>li.active>a {
+    background-color: #910909;
+}
+
+/* Home SVG Custom Dimensions */
+.home-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* English Edition Badge Layout */
+.eng-badge {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* Right Search Vector Anchor styling */
+.jago-nav-search {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.search-trigger-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 0 15px;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.search-trigger-btn:hover {
+    background-color: #910909;
+}
+
+.search-trigger-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ================================================================= */
+/* DROPDOWN SUB-MENUS BEHAVIOR LAYER (DESKTOP)                       */
+/* ================================================================= */
+.dropdown-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    display: none;
+    z-index: 1000;
+    border-radius: 0 0 4px 4px;
+}
+
+.dropdown-submenu li a {
+    display: block !important;
+    padding: 8px 15px !important;
+    color: #333333 !important;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: left;
+}
+
+.dropdown-submenu li a:hover {
+    background-color: #f5f5f5;
+    color: #b30f0f !important;
+}
+
+.nav-dropdown:hover .dropdown-submenu {
+    display: block;
+}
+
+.dropdown-submenu-right {
+    left: auto !important;
+    right: 0 !important;
+}
+
+/* Burger Toggle Button - Hidden on Desktop */
+.jago-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.jago-menu-toggle .burger-bar {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* ================================================================= */
+/* MEDIA QUERY: TARGET MOBILE & TABLET DEVICE VIEWPORTS (< 991px)    */
+/* ================================================================= */
+@media (max-width: 991px) {
+    .jago-nav-container {
+        height: 46px;
+        /* Retain standard height container constraint */
+    }
+
+    /* Reveal the Burger Trigger Button Elements */
+    .jago-menu-toggle {
+        display: flex;
+    }
+
+    /* Structural Transformation of Horizontal Menu Into Vertical Stack */
+    .jago-nav-links {
+        display: none !important;
+        /* Forces layout hide on default mobile state */
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        height: auto !important;
+        position: absolute !important;
+        top: 46px !important;
+        /* Drop down exactly below the 46px navbar line */
+        left: 0 !important;
+        background-color: #b30f0f !important;
+        padding: 10px 0 !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+        z-index: 1000 !important;
+    }
+
+    /* CRITICAL MATCH: Re-aligns perfectly with your script class toggles */
+    .jago-nav-links.open-active {
+        display: flex !important;
+    }
+
+    .jago-nav-links li {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .jago-nav-links li a {
+        display: block !important;
+        padding: 12px 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        font-size: 14px !important;
+        text-align: left;
+    }
+
+    /* Format Mobile Cascading Submenus */
+    .nav-dropdown {
+        position: relative !important;
+    }
+
+    .nav-dropdown:hover .dropdown-submenu {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        background-color: rgba(0, 0, 0, 0.15) !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
+
+    .dropdown-submenu li a {
+        padding-left: 35px !important;
+        /* Clear nested indentation */
+        color: #ffffff !important;
+        /* Contrast correction for red mobile backgrounds */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .dropdown-submenu li a:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: #ffffff !important;
+    }
+
+    /* Transform burger lines into an 'X' close indicator when active */
+    .jago-menu-toggle.open .burger-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .jago-menu-toggle.open .burger-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .jago-menu-toggle.open .burger-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Force the container to span full width */
+#menu .mega-dropdown {
+    position: static !important;
+}
+
+/* Force the menu to show and stretch */
+#menu .mega-dropdown-menu {
+    display: none !important;
+    /* Start hidden */
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #fff !important;
+    z-index: 9999 !important;
+    border: 1px solid #ddd !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175) !important;
+    padding: 20px !important;
+}
+
+/* Trigger the menu on hover */
+#menu .mega-dropdown:hover .mega-dropdown-menu {
+    display: block !important;
+}
+
+/* Ensure internal columns align */
+#menu .mega-dropdown-menu .container {
+    width: 100% !important;
+}
+
+/* Fix text and layout for the links */
+#menu .mega-dropdown-menu ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#menu .mega-dropdown-menu ul li a {
+    color: #333 !important;
+    font-size: 14px !important;
+    padding: 8px 0 !important;
+    display: block !important;
+    text-decoration: none !important;
+}
+
+
+
+/* ============ ROOT / RESET ============ */
+
+:root {
+    --color-text: #222;
+    --color-muted: #6b6b6b;
+    --color-link: #0277bd;
+    --color-accent: #c8102e;
+    --color-border: #e6e6e6;
+    --color-bg-breadcrumb: #f2f2f2;
+    --scorecard-bg: #72002d;
+    --scorecard-bg-dark: #580404;
+    --font-base: "Noto Serif Bengali", Arial, Helvetica, sans-serif;
+    --content-max: 1200px;
+    --sidebar-width: 300px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-base);
+    color: var(--color-text);
+    margin: 0;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============ TOP ACCENT BAR ============ */
+.top-bar {
+    height: 4px;
+    background: var(--color-accent);
+}
+
+/* ============ PAGE GRID ============ */
+.page {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr var(--sidebar-width);
+    gap: 24px;
+    align-items: start;
+}
+
+/* ============ MAIN COLUMN ============ */
+.main-col {
+    min-width: 0;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-bg-breadcrumb);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.breadcrumb__home {
+    display: flex;
+    align-items: center;
+    color: #c8102e;
+}
+
+.breadcrumb__sep {
+    color: #999;
+}
+
+.breadcrumb__link {
+    color: #c8102e;
+}
+
+.breadcrumb__link:hover {
+    color: var(--color-link);
+}
+
+/* Title */
+.title {
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.35;
+    font-weight: 700;
+    margin: 20px 0 16px;
+}
+
+/* Byline + share row */
+.article-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 20px;
+}
+
+.author {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.author__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.author__name,
+.author__time {
+    margin: 0;
+    font-size: 13px;
+    color: var(--color-muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.author__name a {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.author__name a:hover {
+    color: var(--color-link);
+}
+
+.author__role {
+    color: var(--color-muted);
+}
+
+.author__time {
+    margin-top: 4px;
+}
+
+.icon-muted {
+    flex-shrink: 0;
+    color: var(--color-muted);
+}
+
+.share-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.share-btn:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+}
+
+/* Featured image */
+.featured-image {
+    margin: 0 0 20px;
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.featured-image figcaption {
+    font-size: 13px;
+    color: var(--color-muted);
+    font-style: italic;
+    margin-top: 6px;
+}
+
+/* Article body */
+.article-body p {
+    font-size: 18px !important;
+    line-height: 32px;
+    margin-bottom: 20px;
+    margin-left: 90px;
+    margin-right: 120px;
+    text-align: justify;
+}
+
+/* ============ SIDEBAR ============ */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ad-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    border: 1px dashed #ccc;
+    color: #999;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.ad-box--300x250 {
+    width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.sidebar_widget_box {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 15px auto;
+}
+
+.match_score_widget {
+    width: 100%;
+    border: 2px solid #580404;
+    border-radius: 4px;
+    background-color: #72002d;
+    color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    text-align: center;
+}
+
+.scorecard_banner {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.scorecard_header_title {
+    background-color: #580404;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 5px;
+    border-bottom: 1px solid #680000;
+}
+
+.scorecard_row_link {
+    color: #ffffff !important;
+    display: block;
+}
+
+.scorecard_match_row {
+    padding: 10px 8px;
+    border-bottom: 1px solid #680000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: background-color 0.2s ease;
+}
+
+.scorecard_row_link:last-child .scorecard_match_row {
+    border-bottom: none;
+}
+
+.scorecard_row_link:hover .scorecard_match_row {
+    background-color: #5b0024;
+}
+
+.scorecard_team_side {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13.5px;
+    margin: 2px 4px;
+}
+
+.flag_icon {
+    border: 0.5px solid #dddddd;
+    margin: 0 4px;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.team_label {
+    font-weight: 500;
+}
+
+.vs_divider {
+    margin-left: 6px;
+    color: #cca3b3;
+}
+
+.match_time_stamp {
+    font-size: 11.5px;
+    color: #ffd6e6;
+    margin-left: 5px;
+}
+
+
+/* Latest news list */
+.side-list__title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-accent);
+    margin: 0 0 12px;
+}
+
+.side-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.side-list li:last-child {
+    border-bottom: none;
+}
+
+.side-list a:hover {
+    color: var(--color-link);
+}
+
+/* ============ FLOATING BUTTONS ============ */
+.fab {
+    position: fixed;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+    z-index: 50;
+}
+
+.fab--bell {
+    bottom: 66px;
+    background: var(--color-accent);
+    color: #fff;
+}
+
+.fab--top {
+    bottom: 16px;
+    background: #fff;
+    color: #333;
+    border: 1px solid var(--color-border);
+}
+
+
+/* Force the Advertisement Container to Center Everything */
+.ad-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    /* This centers the contents horizontally */
+    justify-content: center !important;
+    margin: 30px auto !important;
+    /* 'auto' centers the container itself */
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.ad-container .ad-label {
+    display: block !important;
+    font-size: 13px !important;
+    color: #888 !important;
+    margin-bottom: 8px !important;
+    text-align: center !important;
+}
+
+.ad-container .ad-content {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.sidebar-news-section {
+    padding: 10px;
+}
+
+.McatTitle span.eee {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 15px;
+    display: block;
+    border-bottom: 2px solid #333;
+}
+
+.thumb-first {
+    border: 1px solid #f5f5f5;
+    margin-bottom: 20px;
+}
+
+.thumb-first p,
+.small-thumb p {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Two Column Grid Setup */
+.row.FlexRow {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
+
+.col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 5px;
+    margin-bottom: 15px;
+}
+
+.small-thumb img {
+    width: 100%;
+    height: 90px;
+    /* Ensures consistent heights */
+    object-fit: cover;
+}
+
+.sidebar-ads {
+    margin-top: 20px;
+    padding: 10px;
+    background: #fff;
+    width: 100%;
+}
+
+.advertisement {
+    margin-bottom: 20px;
+    text-align: center;
+    /* Ensures the ads stay centered */
+    display: flex;
+    justify-content: center;
+}
+
+.paddingBottom20 {
+    padding-bottom: 20px;
+}
+
+/* Ensure the sidebar space is reserved even if the ad takes a moment to load */
+.sidebar-ads .advertisement {
+    min-height: 250px;
+    /* Adjust based on your ad size */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    /* Temporary color to verify the space exists */
+    border: 1px dashed #ccc;
+    /* Helps you see the 'empty' box */
+}
+
+/* Quote Section Styles */
+.quote-container {
+    margin: 20px 0;
+    padding: 0;
+    margin-left: 90px;
+    margin-right: 120px;
+}
+
+.custom-quote {
+    margin: 0;
+    padding: 10px 0 10px 20px;
+    /* Left padding creates space for the border */
+    border-left: 6px solid #808080;
+    /* Gray thick left border */
+    background-color: #f9f9f9;
+    /* Light background to match visual */
+    font-size: 18px;
+    /* Slightly larger for readability */
+    line-height: 1.6;
+    color: #333;
+    position: relative;
+}
+
+.custom-quote p {
+    margin: 0;
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 600px) {
+    .custom-quote {
+        font-size: 16px;
+        padding-left: 15px;
+        border-left-width: 4px;
+    }
+}
+
+.content-details .section-heading {
+    font-size: 24px;
+    /* Consistent with your specified class */
+    font-weight: 700;
+    /* Bold weight for emphasis */
+    color: #333;
+    /* Standard dark gray text */
+    margin-top: 30px;
+    /* Space above the section */
+    margin-bottom: 15px;
+    /* Space below to separate from text */
+    line-height: 1.4;
+    /* Improved readability */
+    font-family: "Noto Serif Bengali", serif;
+    /* Ensures consistency */
+    margin-left: 90px;
+    margin-right: 120px;
+
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .content-details .section-heading {
+        font-size: 20px;
+        /* Slightly smaller on mobile for better fit */
+        margin-top: 20px;
+    }
+}
+
+/* Multi-Read Box Container */
+.multi-read-box {
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    margin: 20px 0;
+    background: #f8fafc;
+    border-radius: 8px;
+    max-width: 100%;
+    margin-left: 90px;
+    margin-right: 120px;
+}
+
+.read-more-label {
+    font-size: 21px;
+    color: #e53e3e;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+
+}
+
+.read-more-link {
+    display: block;
+    text-decoration: none;
+    transition: background .2s;
+}
+
+.read-more-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Image wrapper styling */
+.read-more-img-wrap {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.read-more-img-wrap img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.read-more-content h4 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #0277bd;
+    font-weight: bold;
+}
+
+/* Responsive adjustment: Layout changes to row on wider screens */
+@media (min-width: 576px) {
+    .read-more-body {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .read-more-img-wrap {
+        width: 150px;
+        /* Adjusted width for thumbnail */
+    }
+
+    .read-more-img-wrap img {
+        height: 100px;
+    }
+}
+
+
+/* Credit Line Styling */
+.reporter-credit {
+    font-size: 16px;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 25px;
+    /* Adds space before the tags */
+}
+
+/* Layout Spacings */
+.marginBottom20 {
+    margin-bottom: 20px;
+}
+
+.marginTop10 {
+    margin-top: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.paddingLeft10 {
+    padding-left: 10px !important;
+}
+
+.paddingRight10 {
+    padding-right: 10px !important;
+}
+
+/* Well box styling for CTA */
+.well {
+    min-height: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    color: #333;
+    line-height: 1.2;
+}
+
+/* Tags styling */
+.photo-tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.photo-tags li a {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #454545;
+    font-size: 14px;
+}
+
+/* ============ RESPONSIVE BREAKPOINTS ============ */
+
+/* Tablet: sidebar narrows */
+@media (max-width: 1024px) {
+    :root {
+        --sidebar-width: 260px;
+    }
+
+    .scorecard,
+    .ad-box--300x250 {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Mobile: stack sidebar below content, full width */
+@media (max-width: 768px) {
+    .page {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    .sidebar {
+        order: 2;
+    }
+
+    .main-col {
+        order: 1;
+    }
+
+    .ad-box--300x250 {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .scorecard {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .share-list {
+        align-self: flex-start;
+        gap: 8px;
+    }
+
+    .share-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .author__name,
+    .author__time {
+        font-size: 12px;
+    }
+
+    .article-body p {
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .fab {
+        width: 38px;
+        height: 38px;
+        right: 14px;
+    }
+}
+
+
+/* ======================================================
+   Latest News
+====================================================== */
+
+.latest-news-section {
+    width: 100%;
+    background: #fff;
+    padding: 35px 0;
+}
+
+.latest-news-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.latest-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #222;
+    margin-left: 130px;
+}
+
+.latest-news-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+.latest-news-card img {
+    width: 100%;
+    height: 165px;
+    display: block;
+    object-fit: cover;
+}
+
+.latest-news-card h3 {
+    margin: 12px 0 8px;
+    font-size: 22px;
+    line-height: 1.45;
+    font-weight: 500;
+}
+
+.latest-news-card h3 a {
+    color: #222;
+    text-decoration: none;
+}
+
+.latest-news-card h3 a:hover {
+    color: #d00000;
+}
+
+@media(max-width:1200px) {
+
+    .latest-news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .latest-news-container {
+        padding: 0 15px;
+    }
+
+    .latest-news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .latest-news-card img {
+        height: 220px;
+    }
+
+}
+
+
+/* ================= SITE FOOTER SECTION START ================= */
+
+.site-footer {
+    position: relative !important;
+    font-family: "Noto Serif Bengali", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    background: #fff !important;
+}
+
+.site-footer .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* ===== Logo + App Store Bar ===== */
+.site-footer .footer-logo-bar {
+    background: #e2e2e2 !important;
+    padding: 20px 0 !important;
+}
+
+.site-footer .footer-logo-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+}
+
+.site-footer .footer-logo img {
+    width: 220px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+.site-footer .footer-apps {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.site-footer .footer-apps img {
+    height: 42px !important;
+    width: auto !important;
+    display: block !important;
+}
+
+/* ===== About Text Bar ===== */
+.site-footer .footer-about-bar {
+    background: #fff !important;
+    padding: 25px 0 !important;
+}
+
+.site-footer .footer-heading {
+    font-size: 0 !important;
+    /* hidden visually, kept for SEO/accessibility */
+    margin: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+.site-footer .footer-about-text {
+    margin: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    color: #4a5a4f !important;
+}
+
+/* ===== Bottom Bar ===== */
+.site-footer .footer-bottom-bar {
+    position: relative !important;
+    background: #f4f4f4 !important;
+    padding: 20px 0 !important;
+    border-top: 1px solid #e5e5e5 !important;
+}
+
+.site-footer .footer-bottom-row {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+}
+
+/* Contact info */
+.site-footer .footer-contact {
+    flex: 1 1 500px !important;
+    font-size: 13.5px !important;
+    color: #333 !important;
+    line-height: 1.9 !important;
+}
+
+.site-footer .footer-editor-line,
+.site-footer .footer-address-line,
+.site-footer .footer-contact-line {
+    margin: 0 0 4px 0 !important;
+}
+
+.site-footer .footer-icon {
+    width: 13px !important;
+    height: 13px !important;
+    margin-right: 4px !important;
+    color: #666 !important;
+    vertical-align: -1px !important;
+}
+
+.site-footer .footer-email {
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+/* Footer navigation menu */
+.site-footer .footer-nav {
+    flex: 0 0 auto !important;
+}
+
+.site-footer .footer-menu {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.site-footer .footer-menu li a {
+    display: block !important;
+    padding: 8px 16px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 3px !important;
+    font-size: 13px !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: all 0.2s ease !important;
+}
+
+.site-footer .footer-menu li a:hover {
+    background: #000 !important;
+    border-color: #000 !important;
+    color: #fff !important;
+}
+
+.site-footer .footer-menu li.active a {
+    background: #1e2a1e !important;
+    border-color: #1e2a1e !important;
+    color: #fff !important;
+}
+
+/* Floating buttons */
+.site-footer .footer-notify-btn,
+.site-footer .footer-scroll-top {
+    position: fixed !important;
+    right: 20px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    z-index: 999 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.site-footer .footer-notify-btn {
+    bottom: 80px !important;
+    background: #e7280c !important;
+    color: #fff !important;
+}
+
+.site-footer .footer-scroll-top {
+    bottom: 20px !important;
+    background: #fff !important;
+    color: #e7280c !important;
+    border: 1px solid #e7280c !important;
+}
+
+/* ================= Responsive Breakpoints ================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .site-footer .footer-logo img {
+        width: 190px !important;
+    }
+
+    .site-footer .footer-apps img {
+        height: 36px !important;
+    }
+}
+
+/* Small tablets / large phones: stack layout */
+@media (max-width: 767px) {
+    .site-footer .footer-logo-row {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .site-footer .footer-about-text {
+        font-size: 13.5px !important;
+    }
+
+    .site-footer .footer-bottom-row {
+        flex-direction: column !important;
+    }
+
+    .site-footer .footer-nav {
+        width: 100% !important;
+    }
+
+    .site-footer .footer-menu {
+        justify-content: center !important;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    .site-footer .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .site-footer .footer-logo-bar {
+        padding: 15px 0 !important;
+    }
+
+    .site-footer .footer-logo img {
+        width: 160px !important;
+    }
+
+    .site-footer .footer-apps {
+        gap: 8px !important;
+    }
+
+    .site-footer .footer-apps img {
+        height: 32px !important;
+    }
+
+    .site-footer .footer-about-bar {
+        padding: 18px 0 !important;
+    }
+
+    .site-footer .footer-about-text {
+        font-size: 13px !important;
+        line-height: 1.65 !important;
+    }
+
+    .site-footer .footer-bottom-bar {
+        padding: 16px 0 !important;
+    }
+
+    .site-footer .footer-contact {
+        font-size: 12.5px !important;
+    }
+
+    .site-footer .footer-menu {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .site-footer .footer-menu li a {
+        text-align: center !important;
+    }
+
+    .site-footer .footer-notify-btn,
+    .site-footer .footer-scroll-top {
+        width: 38px !important;
+        height: 38px !important;
+        right: 12px !important;
+    }
+
+    .site-footer .footer-notify-btn {
+        bottom: 68px !important;
+    }
+
+    .site-footer .footer-scroll-top {
+        bottom: 16px !important;
+    }
+}
+
+/* ================= SITE FOOTER SECTION END ================= */

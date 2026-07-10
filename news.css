@@ -1567,104 +1567,206 @@ a {
 
 /* ================= Responsive Breakpoints ================= */
 
+/* Large Tablets */
+@media (max-width:992px){
+
+.site-footer .container{
+    padding-left:18px!important;
+    padding-right:18px!important;
+}
+
+.site-footer .footer-logo-row{
+    justify-content:center!important;
+    text-align:center!important;
+    gap:20px!important;
+}
+
+.site-footer .footer-logo{
+    width:100%!important;
+    display:flex!important;
+    justify-content:center!important;
+}
+
+.site-footer .footer-logo img{
+    width:200px!important;
+}
+
+.site-footer .footer-apps{
+    justify-content:center!important;
+    flex-wrap:wrap!important;
+}
+
+.site-footer .footer-apps img{
+    height:38px!important;
+}
+
+.site-footer .footer-bottom-row{
+    flex-direction:column!important;
+    align-items:center!important;
+    text-align:center!important;
+}
+
+.site-footer .footer-contact{
+    flex:none!important;
+    width:100%!important;
+}
+
+.site-footer .footer-nav{
+    width:100%!important;
+}
+
+.site-footer .footer-menu{
+    justify-content:center!important;
+}
+
+}
+
 /* Tablets */
-@media (max-width: 992px) {
-    .site-footer .footer-logo img {
-        width: 190px !important;
-    }
+@media (max-width:768px){
 
-    .site-footer .footer-apps img {
-        height: 36px !important;
-    }
+.site-footer .footer-logo img{
+    width:180px!important;
 }
 
-/* Small tablets / large phones: stack layout */
-@media (max-width: 767px) {
-    .site-footer .footer-logo-row {
-        justify-content: center !important;
-        text-align: center !important;
-    }
-
-    .site-footer .footer-about-text {
-        font-size: 13.5px !important;
-    }
-
-    .site-footer .footer-bottom-row {
-        flex-direction: column !important;
-    }
-
-    .site-footer .footer-nav {
-        width: 100% !important;
-    }
-
-    .site-footer .footer-menu {
-        justify-content: center !important;
-    }
+.site-footer .footer-about-bar{
+    padding:22px 0!important;
 }
 
-/* Phones */
-@media (max-width: 480px) {
-    .site-footer .container {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
+.site-footer .footer-about-text{
+    text-align:center!important;
+    font-size:13.5px!important;
+    line-height:1.8!important;
+}
 
-    .site-footer .footer-logo-bar {
-        padding: 15px 0 !important;
-    }
+.site-footer .footer-contact{
+    font-size:13px!important;
+    line-height:1.8!important;
+}
 
-    .site-footer .footer-logo img {
-        width: 160px !important;
-    }
+.site-footer .footer-menu{
+    display:flex!important;
+    justify-content:center!important;
+    gap:10px!important;
+}
 
-    .site-footer .footer-apps {
-        gap: 8px !important;
-    }
+.site-footer .footer-menu li a{
+    padding:8px 14px!important;
+    font-size:13px!important;
+}
 
-    .site-footer .footer-apps img {
-        height: 32px !important;
-    }
+}
 
-    .site-footer .footer-about-bar {
-        padding: 18px 0 !important;
-    }
+/* Mobile */
+@media (max-width:576px){
 
-    .site-footer .footer-about-text {
-        font-size: 13px !important;
-        line-height: 1.65 !important;
-    }
+.site-footer .container{
+    padding-left:15px!important;
+    padding-right:15px!important;
+}
 
-    .site-footer .footer-bottom-bar {
-        padding: 16px 0 !important;
-    }
+.site-footer .footer-logo-bar{
+    padding:18px 0!important;
+}
 
-    .site-footer .footer-contact {
-        font-size: 12.5px !important;
-    }
+.site-footer .footer-logo img{
+    width:160px!important;
+}
 
-    .site-footer .footer-menu {
-        flex-direction: column !important;
-        width: 100% !important;
-    }
+.site-footer .footer-apps{
+    width:100%!important;
+    justify-content:center!important;
+    gap:10px!important;
+}
 
-    .site-footer .footer-menu li a {
-        text-align: center !important;
-    }
+.site-footer .footer-apps img{
+    height:34px!important;
+}
 
-    .site-footer .footer-notify-btn,
-    .site-footer .footer-scroll-top {
-        width: 38px !important;
-        height: 38px !important;
-        right: 12px !important;
-    }
+.site-footer .footer-about-bar{
+    padding:18px 0!important;
+}
 
-    .site-footer .footer-notify-btn {
-        bottom: 68px !important;
-    }
+.site-footer .footer-about-text{
+    font-size:13px!important;
+    text-align:justify!important;
+}
 
-    .site-footer .footer-scroll-top {
-        bottom: 16px !important;
-    }
+.site-footer .footer-bottom-bar{
+    padding:18px 0!important;
+}
+
+.site-footer .footer-contact{
+    font-size:12.5px!important;
+    text-align:center!important;
+}
+
+.site-footer .footer-editor-line,
+.site-footer .footer-address-line,
+.site-footer .footer-contact-line{
+    margin-bottom:8px!important;
+}
+
+.site-footer .footer-menu{
+    display:grid!important;
+    grid-template-columns:repeat(2,1fr)!important;
+    gap:10px!important;
+    width:100%!important;
+}
+
+.site-footer .footer-menu li{
+    width:100%!important;
+}
+
+.site-footer .footer-menu li a{
+    width:100%!important;
+    padding:10px!important;
+    text-align:center!important;
+}
+
+.site-footer .footer-notify-btn,
+.site-footer .footer-scroll-top{
+    width:40px!important;
+    height:40px!important;
+    right:12px!important;
+}
+
+.site-footer .footer-notify-btn{
+    bottom:70px!important;
+}
+
+.site-footer .footer-scroll-top{
+    bottom:18px!important;
+}
+
+}
+
+/* Small Phones */
+@media (max-width:360px){
+
+.site-footer .footer-logo img{
+    width:140px!important;
+}
+
+.site-footer .footer-apps img{
+    height:30px!important;
+}
+
+.site-footer .footer-menu{
+    grid-template-columns:1fr!important;
+}
+
+.site-footer .footer-menu li a{
+    font-size:12px!important;
+}
+
+.site-footer .footer-contact{
+    font-size:12px!important;
+}
+
+.site-footer .footer-about-text{
+    font-size:12.5px!important;
+}
+
 }
 
 /* ================= SITE FOOTER SECTION END ================= */
@@ -1900,5 +2002,227 @@ a {
 
 }
 
+/* Desktop */
+@media (min-width:992px){
+    .jago-mobile-menu{
+        display:none;
+    }
+}
 
 
+
+/* ==========================================================
+   RESPONSIVE FIXES
+   Add this at the VERY END of the CSS
+========================================================== */
+
+/* ---------- Large Tablets ---------- */
+@media (max-width:1200px){
+
+.page{
+grid-template-columns:1fr 280px;
+gap:20px;
+}
+
+.article-body p,
+.quote-container,
+.content-details .section-heading,
+.multi-read-box{
+margin-left:30px;
+margin-right:30px;
+}
+
+.latest-title{
+margin-left:30px;
+}
+
+.latest-news-grid{
+margin-left:30px;
+margin-right:30px;
+}
+
+}
+
+/* ---------- Tablets ---------- */
+@media (max-width:992px){
+
+.page{
+grid-template-columns:1fr;
+}
+
+.sidebar{
+margin-top:40px;
+}
+
+.sidebar_widget_box,
+.ad-box--300x250{
+max-width:100%;
+}
+
+.article-body p,
+.quote-container,
+.content-details .section-heading,
+.multi-read-box{
+margin-left:0;
+margin-right:0;
+}
+
+.latest-title{
+margin-left:0;
+}
+
+.latest-news-grid{
+grid-template-columns:repeat(2,1fr);
+margin-left:0;
+margin-right:0;
+}
+
+.title{
+font-size:28px;
+}
+
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width:768px){
+
+.page{
+padding:15px;
+}
+
+.title{
+font-size:24px;
+line-height:1.5;
+}
+
+.article-meta{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.author{
+width:100%;
+}
+
+.share-list{
+width:100%;
+justify-content:flex-start;
+}
+
+.article-body p{
+font-size:18px!important;
+line-height:2;
+margin:0 0 20px;
+text-align:left;
+}
+
+.quote-container,
+.multi-read-box,
+.content-details .section-heading{
+margin-left:0;
+margin-right:0;
+}
+
+.featured-image img{
+border-radius:0;
+}
+
+.read-more-body{
+flex-direction:column;
+}
+
+.read-more-img-wrap{
+width:100%;
+}
+
+.read-more-img-wrap img{
+height:auto;
+}
+
+.latest-news-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.latest-news-card img{
+height:auto;
+}
+
+.latest-title{
+font-size:24px;
+margin-bottom:20px;
+}
+
+.sidebar-news-section{
+padding:0;
+}
+
+.col-sm-6{
+flex:0 0 100%;
+max-width:100%;
+}
+
+.thumb-first p,
+.small-thumb p{
+font-size:17px;
+}
+
+}
+
+/* ---------- Small Phones ---------- */
+@media (max-width:480px){
+
+.page{
+padding:12px;
+}
+
+.breadcrumb{
+font-size:12px;
+padding:10px;
+}
+
+.title{
+font-size:22px;
+}
+
+.author__avatar{
+width:36px;
+height:36px;
+}
+
+.article-body p{
+font-size:17px!important;
+line-height:1.9;
+}
+
+.custom-quote{
+font-size:16px;
+padding:12px 15px;
+}
+
+.read-more-label{
+font-size:18px;
+}
+
+.read-more-content h4{
+font-size:18px;
+}
+
+.latest-title{
+font-size:22px;
+}
+
+.latest-news-card h3{
+font-size:18px;
+}
+
+.share-btn{
+width:34px;
+height:34px;
+}
+
+.fab{
+right:12px;
+}
+
+}

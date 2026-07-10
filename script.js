@@ -1,23 +1,99 @@
 // =================================================================
-// SECTION: MOBILE NAVIGATION TOGGLE ENGINE
+// MOBILE MENU
 // =================================================================
 document.addEventListener("DOMContentLoaded", function () {
-    var toggleBtn = document.querySelector(".jago-menu-toggle");
-    var menuList = document.querySelector(".jago-nav-links");
 
-    if (toggleBtn && menuList) {
-        toggleBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            if (menuList.classList.contains("open-active")) {
-                menuList.classList.remove("open-active");
-                toggleBtn.classList.remove("open");
-            } else {
-                menuList.classList.add("open-active");
-                toggleBtn.classList.add("open");
-            }
+    const menuBtn = document.querySelector(".jago-mobile-header .jago-menu-toggle");
+    const mobileMenu = document.querySelector(".jago-mobile-menu");
+    const closeBtn = document.querySelector(".mobile-close");
+
+    const desktopMenu = document.querySelector(".jago-nav-links");
+    const mobileGrid = document.querySelector(".mobile-menu-grid");
+
+    /* ---------- OPEN ---------- */
+
+    if (menuBtn && mobileMenu) {
+
+        menuBtn.addEventListener("click", function () {
+
+            mobileMenu.classList.add("open");
+            document.body.style.overflow = "hidden";
+
         });
+
     }
+
+    /* ---------- CLOSE ---------- */
+
+    if (closeBtn && mobileMenu) {
+
+        closeBtn.addEventListener("click", function () {
+
+            mobileMenu.classList.remove("open");
+            document.body.style.overflow = "";
+
+        });
+
+    }
+
+    /* ---------- BUILD MOBILE MENU ---------- */
+
+    if (desktopMenu && mobileGrid) {
+
+        mobileGrid.innerHTML = "";
+
+        desktopMenu.querySelectorAll(":scope>li").forEach(function (item) {
+
+            if (item.classList.contains("active")) return;
+
+            const firstLink = item.querySelector(":scope>a");
+
+            if (!firstLink) return;
+
+            const cell = document.createElement("div");
+            cell.className = "mobile-menu-item";
+
+            const newLink = document.createElement("a");
+            newLink.href = firstLink.getAttribute("href") || "#";
+            newLink.textContent = firstLink.childNodes[0].textContent.trim();
+
+            cell.appendChild(newLink);
+
+            const submenu = item.querySelector(".dropdown-submenu,.mega-dropdown-menu");
+
+            if (submenu) {
+
+                cell.classList.add("has-child");
+
+                const child = document.createElement("div");
+                child.className = "mobile-child-menu";
+
+                submenu.querySelectorAll("a").forEach(function (a) {
+
+                    const ca = document.createElement("a");
+                    ca.href = a.href;
+                    ca.innerHTML = a.innerHTML;
+                    child.appendChild(ca);
+
+                });
+
+                cell.appendChild(child);
+
+                newLink.addEventListener("click", function (e) {
+
+                    e.preventDefault();
+                    cell.classList.toggle("open");
+
+                });
+
+            }
+
+            mobileGrid.appendChild(cell);
+
+        });
+
+    }
+
 });
 
 
@@ -31,12 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var carousel = document.getElementById('photoCarousel');
     if (!carousel) return;
 
-    var track   = carousel.querySelector('.carousel-track');
-    var items   = carousel.querySelectorAll('.carousel-item');
+    var track = carousel.querySelector('.carousel-track');
+    var items = carousel.querySelectorAll('.carousel-item');
     var prevBtn = carousel.querySelector('.carousel-arrow-left');
     var nextBtn = carousel.querySelector('.carousel-arrow-right');
-    var total   = items.length;
-    var index   = 0;
+    var total = items.length;
+    var index = 0;
 
     if (!track || total === 0) return;
 

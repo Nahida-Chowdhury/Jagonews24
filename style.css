@@ -199,31 +199,7 @@
   }
 }
 
-/* Mobile Viewport Optimization (Stacks everything vertically) */
-@media (max-width: 767px) {
 
-  /* Hides ad banner container area layout on small mobile screens */
-  .jago-top-ad-bar {
-    display: none;
-  }
-
-  /* Changes row flex flow into vertical column matrices */
-  .jago-header-container {
-    flex-direction: column;
-    gap: 15px;
-    /* Adds consistent spacing between the sections */
-    text-align: center;
-  }
-
-  .jago-date-block,
-  .jago-logo-block,
-  .jago-social-block {
-    flex: none;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-}
 
 
 /* ================================================================= */
@@ -498,50 +474,114 @@ body {
   }
 }
 
-/* Force the container to span full width */
+
+/* ===========================
+   DESKTOP
+===========================*/
+
 #menu .mega-dropdown {
-  position: static !important;
+  position: static;
 }
 
-/* Force the menu to show and stretch */
 #menu .mega-dropdown-menu {
-  display: none !important;
-  /* Start hidden */
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
-  width: 100% !important;
-  background: #fff !important;
-  z-index: 9999 !important;
-  border: 1px solid #ddd !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175) !important;
-  padding: 20px !important;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+  z-index: 9999;
 }
 
-/* Trigger the menu on hover */
-#menu .mega-dropdown:hover .mega-dropdown-menu {
-  display: block !important;
+#menu .mega-dropdown:hover>.mega-dropdown-menu {
+  display: block;
 }
 
-/* Ensure internal columns align */
-#menu .mega-dropdown-menu .container {
-  width: 100% !important;
-}
-
-/* Fix text and layout for the links */
 #menu .mega-dropdown-menu ul {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-#menu .mega-dropdown-menu ul li a {
-  color: #333 !important;
-  font-size: 14px !important;
-  padding: 8px 0 !important;
-  display: block !important;
-  text-decoration: none !important;
+#menu .mega-dropdown-menu li a {
+  display: block;
+  padding: 8px 0;
+  color: #333;
+  text-decoration: none;
 }
+
+
+/* ===========================
+   MOBILE
+===========================*/
+
+@media(max-width:991px) {
+
+  #menu .mega-dropdown {
+    position: relative;
+  }
+
+  #menu .mega-dropdown-menu {
+    display: none;
+    position: static;
+    width: 100%;
+    background: rgba(0, 0, 0, .12);
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  #menu .mega-dropdown.open>.mega-dropdown-menu {
+    display: block;
+  }
+
+  #menu .mega-dropdown-menu .container,
+  #menu .mega-dropdown-menu .row,
+  #menu .mega-dropdown-menu [class*=col] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #menu .mega-dropdown-menu li a {
+    color: #fff;
+    padding: 10px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+  }
+}
+
+.nav-angle {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+@media (max-width:991px) {
+
+  .mega-dropdown>a {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-angle {
+    width: 12px;
+    height: 12px;
+  }
+
+  .mega-dropdown.open .nav-angle {
+    transform: rotate(180deg);
+    transition: .3s;
+  }
+}
+
 
 /* ================================================================= */
 /* STYLE STACK: JAGO NEWS TRENDING HIGHLIGHTS BAR                    */
@@ -4497,3 +4537,233 @@ section.paddingTopBottom20.category-grid-section {
 }
 
 /* ================= SITE FOOTER SECTION END ================= */
+
+
+/* ================= Mobile Header and Navbar ================= */
+
+.jago-mobile-header {
+  display: none;
+  height: 64px;
+}
+
+@media (max-width:991px) {
+
+  .jago-custom-header {
+    display: none;
+  }
+
+  .jago-top-ad-bar {
+    display: none;
+  }
+
+  .jago-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    padding: 8px 12px;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    box-sizing: border-box;
+  }
+
+  .jago-mobile-header .jago-menu-toggle {
+    display: flex;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .jago-mobile-header .burger-bar {
+    width: 100%;
+    height: 2px;
+    background: #c41010;
+  }
+
+  .mobile-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .mobile-logo img {
+    height: 70px;
+    width: auto;
+    max-width: none;
+    display: block;
+  }
+
+  .mobile-eng {
+    font: 700 13px Arial, sans-serif;
+    color: #b30f0f;
+    text-decoration: none;
+    margin: 0 16px;
+  }
+
+  .mobile-search {
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+  }
+
+  .mobile-search svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .jago-nav-search {
+    display: none !important;
+  }
+}
+
+@media (max-width:991px) {
+
+  .jago-main-nav {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .jago-main-nav .jago-nav-search {
+    display: none;
+  }
+
+  .jago-main-nav .jago-nav-container {
+    height: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .jago-main-nav .jago-menu-toggle {
+    display: none !important;
+  }
+
+  .jago-nav-links {
+    top: 72px !important;
+    left: 0;
+    width: 100%;
+    position: fixed !important;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    z-index: 9999;
+  }
+
+  .jago-nav-links li a {
+    padding: 16px 20px !important;
+  }
+
+}
+
+
+
+
+@media (max-width:991px) {
+
+  .jago-mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 99999;
+    overflow-y: auto;
+    transition: .35s;
+  }
+
+  .jago-mobile-menu.open {
+    left: 0;
+  }
+
+  .mobile-menu-top {
+    height: 58px;
+    background: #b30f0f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+    color: #fff;
+  }
+
+  .mobile-home {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .mobile-home svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+  }
+
+  .mobile-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .mobile-menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mobile-menu-item {
+    border-bottom: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+  }
+
+  .mobile-menu-item:nth-child(even) {
+    border-right: none;
+  }
+
+  .mobile-menu-item>a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    color: #222;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    background: #fff;
+  }
+
+  .mobile-menu-item.has-child>a::after {
+    content: "▼";
+    font-size: 10px;
+  }
+
+  .mobile-child-menu {
+    display: none;
+    background: #fafafa;
+  }
+
+  .mobile-menu-item.open .mobile-child-menu {
+    display: block;
+  }
+
+  .mobile-child-menu a {
+    display: block;
+    padding: 12px 30px;
+    font-size: 14px;
+    color: #444;
+    text-decoration: none;
+    border-top: 1px solid #ececec;
+  }
+
+}

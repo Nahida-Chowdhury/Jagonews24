@@ -189,3 +189,10 @@ document.addEventListener("DOMContentLoaded", function () {
     startAutoplay();
 });
 /* ================= PHOTO GALLERY SECTION - CAROUSEL JS END ================= */
+
+
+
+/* ================= Print button ================= */
+document.querySelector(".print-btn").addEventListener("click", function () {
+    window.print();
+});

@@ -2226,3 +2226,39 @@ right:12px;
 }
 
 }
+
+
+/* ---------- Print button ---------- */
+
+@media print {
+
+    header,
+    footer,
+    nav,
+    .sidebar,
+    .ads,
+    .share-buttons,
+    .comments,
+    .related-posts,
+    .back-to-top {
+        display: none !important;
+    }
+
+    .article-container,
+    .news-details,
+    .news-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    body {
+        background: #fff !important;
+    }
+
+    a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+}
